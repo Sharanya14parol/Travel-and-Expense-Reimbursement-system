@@ -1,0 +1,6 @@
+ID,employee_ID,clientName,travelPurpose,travelType_name,status,fromLocation,toLocation,startDate,endDate,estimatedCost,requestedOn,advanceRequired,requestedAdvanceAmount,approvedAdvanceAmount,financeapprovedOn,finalReimbursedAmount,tripStatus,expenseIncurred
+00011111-1111-1111-1111-111111111111,11111111-1111-1111-1111-111111111111,Katie,Client Meeting,Domestic,Approved,Mangalore,Bangalore,2026-04-05,2026-04-07,8500.00,2026-04-01,true,3000.00,750.00,2026-04-02,,Trip Approved,,
+00022222-2222-2222-2222-222222222222,22222222-2222-2222-2222-222222222222,Natalia,Finance Audit Visit,Domestic,Pending Finance Approval,Bangalore,Mysore,2026-04-10,2026-04-11,4200.00,2026-04-03,false,0.00,0.00,,,Trip Completed,,
+00033333-3333-3333-3333-333333333333,33333333-3333-3333-3333-333333333333,Francis,HR Training Program,Domestic,Approved,Mysore,Chennai,2026-04-15,2026-04-18,12000.00,2026-04-05,true,5000.00,1250.00,2026-04-06,,Trip Approved,,
+00044444-4444-4444-4444-444444444444,44444444-4444-4444-4444-444444444444,Manjeet Singh,Project Deployment,Domestic,Pending Finance Approval,Udupi,Hyderabad,2026-04-20,2026-04-23,15000.00,2026-04-08,true,7000.00,0.00,,,Trip Completed,,
+00055555-5555-5555-5555-555555555555,55555555-5555-5555-5555-555555555555,Bharath,Admin Conference,Domestic,Approved,Manipal,Pune,2026-04-25,2026-04-27,9800.00,2026-04-09,false,0.00,0.00,,,Trip Approved,,
