@@ -1,5 +1,13 @@
 namespace travel_expense_management_system;
 
+type role     : String enum {
+    Employee;
+    Manager;
+    FinanceHead;
+    TravelAdmin;
+    SuperAdmin;
+}
+
 type category : String enum {
     Travel;
     Food;
@@ -11,7 +19,7 @@ entity Location {
     key name : String;
 }
 
-entity Department {
+entity TravelType {
     key name : String;
 }
 
@@ -19,16 +27,33 @@ entity ExpenseType {
     key name : String;
 }
 
+entity Department {
+    key ID              : UUID @Core.Computed: true;
+        name            : String;
+        totalBudget     : Decimal(15, 2);
+        usedBudget      : Decimal(15, 2);
+        remainingBudget : Decimal(15, 2);
+}
+
 entity Employees {
     key ID            : UUID @Core.Computed: true;
         empName       : String;
         email         : String;
         department    : Association to Department;
-        designation   : String;
-        managerName   : String;
+        manager       : Association to Employees;
+        role          : role;
         location      : Association to Location;
         travelRequest : Composition of many TravelRequests
                             on travelRequest.employee = $self;
+}
+
+entity Vendor {
+    key ID        : UUID @Core.Computed: true;
+        name      : String;
+        type      : String;
+        rating    : Decimal(2, 2);
+        costLevel : String; // LOW / MEDIUM / HIGH
+        isActive  : Boolean default true;
 }
 
 /*
@@ -64,26 +89,26 @@ entity ExpensePolicies {
         description      : String;
 }
 
-entity TravelType {
-    key name : String;
-}
-
 entity TravelRequests {
     key ID                     : UUID @Core.Computed: true;
         employee               : Association to Employees;
+        department             : Association to Department;
         clientName             : String;
         travelPurpose          : String;
         travelType             : Association to TravelType;
+        vendor                 : Association to Vendor;
         status                 : String default 'Pending Manager Approval';
         fromLocation           : String;
         toLocation             : String;
         startDate              : Date;
         endDate                : Date;
         estimatedCost          : Decimal(15, 2);
-        requestedOn            : Date;
+        requestedOn            : Date default CURRENT_DATE;
+        approvedOn             : Date;
         advanceRequired        : Boolean default false;
         requestedAdvanceAmount : Decimal(15, 2) default 0;
         approvedAdvanceAmount  : Decimal(15, 2) default 0;
+        managerapprovedOn      : Date;
         financeapprovedOn      : Date;
         finalReimbursedAmount  : Decimal(15, 2) default 0;
         tripStatus             : String;
@@ -102,4 +127,13 @@ entity ExpenseClaims {
         description     : String;
         attachment      : String;
         claimStatus     : String default 'Pending';
+}
+
+entity TravelAnalytics {
+    key ID         : UUID @Core.Computed: true;
+        department : Association to Department;
+        totalTrips : Integer;
+        totalCost  : Decimal(15, 2);
+        avgCost    : Decimal(15, 2);
+        month      : String;
 }

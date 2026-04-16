@@ -10,7 +10,9 @@
     "watch-expense_policies": "cds watch --open expensepolicies/index.html?sap-ui-xx-viewCache=false --livereload false",
     "watch-expense_claims": "cds watch --open expenseclaims/index.html?sap-ui-xx-viewCache=false --livereload false",
     "watch-project1": "cds watch --open project1/index.html?sap-ui-xx-viewCache=false --livereload false",
-    "watch-finance_advance_approval": "cds watch --open financeadvanceapproval/index.html?sap-ui-xx-viewCache=false --livereload false"
+    "watch-finance_advance_approval": "cds watch --open financeadvanceapproval/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-employee_dashboard": "cds watch --open employeedashboard/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-finance_expense_approval": "cds watch --open financeexpenseapproval/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
   "keywords": [],
   "author": "",
@@ -48,6 +50,8 @@
     "app/employees",
     "app/finance_advance_approval",
     "app/finance_advance_approval",
-    "app/finance_advance_approval"
+    "app/finance_advance_approval",
+    "app/employee_dashboard",
+    "app/finance_expense_approval"
   ]
 }

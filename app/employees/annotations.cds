@@ -21,17 +21,7 @@ annotate service.Employees with @(
             },
             {
                 $Type: 'UI.DataField',
-                Label: 'Designation',
-                Value: designation,
-            },
-            {
-                $Type: 'UI.DataField',
-                Label: 'Manager',
-                Value: managerName,
-            },
-            {
-                $Type: 'UI.DataField',
-                Value: department_name,
+                Value: department.name,
                 Label: 'Department',
             },
             {
@@ -73,17 +63,12 @@ annotate service.Employees with @(
         },
         {
             $Type: 'UI.DataField',
-            Label: 'Designation',
-            Value: designation,
+            Label: 'Role',
+            Value: role,
         },
         {
             $Type: 'UI.DataField',
-            Label: 'Manager',
-            Value: managerName,
-        },
-        {
-            $Type: 'UI.DataField',
-            Value: location.name,
+            Value: location_name,
             Label: 'Location',
         },
     ],
@@ -94,10 +79,6 @@ annotate service.Employees with @(
         },
         TypeName      : '',
         TypeNamePlural: '',
-        Description   : {
-            $Type: 'UI.DataField',
-            Value: designation,
-        },
         TypeImageUrl  : 'sap-icon://person-placeholder',
     },
 );
@@ -170,9 +151,6 @@ annotate service.TravelRequests with {
     status @Common.FieldControl: #ReadOnly
 };
 
-annotate service.ExpenseClaims with {
-    employee @Common.FieldControl: #ReadOnly
-};
 
 annotate service.Employees with {
     ID @Common.FieldControl: #ReadOnly
@@ -225,3 +203,27 @@ annotate service.TravelRequests with {
         Common.ValueListWithFixedValues: true,
     )
 };
+annotate service.TravelRequests with {
+    approvedAdvanceAmount @Common.FieldControl : #ReadOnly
+};
+
+annotate service.TravelRequests with {
+    financeapprovedOn @Common.FieldControl : #ReadOnly
+};
+
+annotate service.TravelRequests with {
+    finalReimbursedAmount @Common.FieldControl : #ReadOnly
+};
+
+annotate service.TravelRequests with {
+    expenseIncurred @Common.FieldControl : #ReadOnly
+};
+
+annotate service.TravelRequests with {
+    requestedOn @Common.FieldControl : #ReadOnly
+};
+
+annotate service.TravelRequests with {
+    managerapprovedOn @Common.FieldControl : #ReadOnly
+};
+

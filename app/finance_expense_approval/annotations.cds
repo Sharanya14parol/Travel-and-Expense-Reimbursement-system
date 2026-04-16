@@ -1,94 +1,108 @@
 using Travel_Expense_Service as service from '../../srv/service';
 
-annotate service.FinanceAdvanceApproval with @(
+annotate service.FinanceExpenseApproval with @(
     UI.FieldGroup #GeneratedGroup: {
         $Type: 'UI.FieldGroupType',
         Data : [
             {
                 $Type: 'UI.DataField',
-                Label: 'Travel Purpose',
+                Label: 'travelPurpose',
                 Value: travelPurpose,
             },
             {
                 $Type: 'UI.DataField',
-                Label: 'Travel Type',
+                Label: 'travelType_name',
                 Value: travelType_name,
             },
             {
                 $Type: 'UI.DataField',
-                Label: 'Status',
+                Label: 'status',
                 Value: status,
             },
             {
                 $Type: 'UI.DataField',
-                Label: 'From Location',
+                Label: 'fromLocation',
                 Value: fromLocation,
             },
             {
                 $Type: 'UI.DataField',
-                Label: 'To Location',
+                Label: 'toLocation',
                 Value: toLocation,
             },
             {
                 $Type: 'UI.DataField',
-                Label: 'Start Date',
+                Label: 'startDate',
                 Value: startDate,
             },
             {
                 $Type: 'UI.DataField',
-                Label: 'End Date',
+                Label: 'endDate',
                 Value: endDate,
             },
             {
                 $Type: 'UI.DataField',
-                Label: 'Estimated Cost',
+                Label: 'estimatedCost',
                 Value: estimatedCost,
             },
             {
                 $Type: 'UI.DataField',
-                Label: 'Requested On',
+                Label: 'requestedOn',
                 Value: requestedOn,
             },
             {
+                $Type : 'UI.DataField',
+                Value : managerapprovedOn,
+                Label : 'managerapprovedOn',
+            },
+            {
                 $Type: 'UI.DataField',
-                Label: 'Advance Required',
+                Label: 'advanceRequired',
                 Value: advanceRequired,
             },
             {
                 $Type: 'UI.DataField',
-                Label: 'Requested Advance Amount',
+                Label: 'requestedAdvanceAmount',
                 Value: requestedAdvanceAmount,
             },
             {
                 $Type: 'UI.DataField',
-                Label: 'Approved Advance Amount',
+                Label: 'financeapprovedOn',
+                Value: financeapprovedOn,
+            },
+            {
+                $Type: 'UI.DataField',
+                Label: 'approvedAdvanceAmount',
                 Value: approvedAdvanceAmount,
             },
             {
                 $Type: 'UI.DataField',
-                Value: managerapprovedOn,
-                Label: 'Manager ApprovedOn',
+                Label: 'finalReimbursedAmount',
+                Value: finalReimbursedAmount,
             },
             {
                 $Type: 'UI.DataField',
-                Label: 'Finance Approved On',
-                Value: financeapprovedOn,
+                Label: 'tripStatus',
+                Value: tripStatus,
             },
-
+            {
+                $Type: 'UI.DataField',
+                Label: 'expenseIncurred',
+                Value: expenseIncurred,
+            },
         ],
     },
     UI.Facets                    : [
         {
             $Type : 'UI.ReferenceFacet',
+            ID    : 'GeneratedFacet1',
             Label : 'General Information',
-            ID    : 'TravelRequests',
-            Target: '@UI.FieldGroup#TravelRequests',
+            Target: '@UI.FieldGroup#GeneratedGroup',
         },
         {
             $Type : 'UI.ReferenceFacet',
-            ID    : 'GeneratedFacet1',
-            Label : 'Travel Request',
-            Target: '@UI.FieldGroup#GeneratedGroup',
+            Label : 'Expense Claims',
+            ID    : 'ExpenseClaims',
+            Target: 'expenseClaim/@UI.LineItem#ExpenseClaims1',
         },
     ],
     UI.LineItem                  : [
@@ -114,33 +128,18 @@ annotate service.FinanceAdvanceApproval with @(
         },
         {
             $Type: 'UI.DataField',
-            Label: 'fromLocation',
-            Value: fromLocation,
+            Value: advanceRequired,
+            Label: 'advanceRequired',
         },
         {
             $Type: 'UI.DataField',
-            Value: toLocation,
-            Label: 'toLocation',
+            Value: approvedAdvanceAmount,
+            Label: 'approvedAdvanceAmount',
         },
         {
             $Type: 'UI.DataField',
-            Value: startDate,
-            Label: 'startDate',
-        },
-        {
-            $Type: 'UI.DataField',
-            Value: endDate,
-            Label: 'endDate',
-        },
-        {
-            $Type : 'UI.DataFieldForAction',
-            Action: 'Travel_Expense_Service.advanceapprove',
-            Label : 'advanceapprove',
-        },
-        {
-            $Type : 'UI.DataFieldForAction',
-            Action: 'Travel_Expense_Service.advancereject',
-            Label : 'advancereject',
+            Value: estimatedCost,
+            Label: 'estimatedCost',
         },
     ],
     UI.HeaderInfo                : {
@@ -150,45 +149,14 @@ annotate service.FinanceAdvanceApproval with @(
         },
         TypeName      : '',
         TypeNamePlural: '',
-    },
-    UI.FieldGroup #TravelRequests: {
-        $Type: 'UI.FieldGroupType',
-        Data : [
-            {
-                $Type: 'UI.DataField',
-                Value: employee.ID,
-                Label: 'ID',
-            },
-            {
-                $Type: 'UI.DataField',
-                Value: employee.empName,
-                Label: 'Name',
-            },
-            {
-                $Type: 'UI.DataField',
-                Value: employee.email,
-                Label: 'Email',
-            },
-            {
-                $Type: 'UI.DataField',
-                Value: employee.location_name,
-                Label: 'Location',
-            },
-            {
-                $Type: 'UI.DataField',
-                Value: employee.role,
-                Label: 'Role',
-            },
-            {
-                $Type: 'UI.DataField',
-                Value: employee.department.name,
-                Label: 'Department',
-            },
-        ],
+        Description   : {
+            $Type: 'UI.DataField',
+            Value: employee.role,
+        },
     },
 );
 
-annotate service.FinanceAdvanceApproval with {
+annotate service.FinanceExpenseApproval with {
     employee @Common.ValueList: {
         $Type         : 'Common.ValueListType',
         CollectionPath: 'Employees',
@@ -208,17 +176,47 @@ annotate service.FinanceAdvanceApproval with {
             },
             {
                 $Type            : 'Common.ValueListParameterDisplayOnly',
-                ValueListProperty: 'department',
+                ValueListProperty: 'role',
             },
             {
                 $Type            : 'Common.ValueListParameterDisplayOnly',
-                ValueListProperty: 'designation',
+                ValueListProperty: 'location_name',
             },
         ],
     }
 };
 
-annotate service.FinanceAdvanceApproval with {
+annotate service.FinanceExpenseApproval with {
+    department @Common.ValueList: {
+        $Type         : 'Common.ValueListType',
+        CollectionPath: 'Department',
+        Parameters    : [
+            {
+                $Type            : 'Common.ValueListParameterInOut',
+                LocalDataProperty: department_ID,
+                ValueListProperty: 'ID',
+            },
+            {
+                $Type            : 'Common.ValueListParameterDisplayOnly',
+                ValueListProperty: 'name',
+            },
+            {
+                $Type            : 'Common.ValueListParameterDisplayOnly',
+                ValueListProperty: 'totalBudget',
+            },
+            {
+                $Type            : 'Common.ValueListParameterDisplayOnly',
+                ValueListProperty: 'usedBudget',
+            },
+            {
+                $Type            : 'Common.ValueListParameterDisplayOnly',
+                ValueListProperty: 'remainingBudget',
+            },
+        ],
+    }
+};
+
+annotate service.FinanceExpenseApproval with {
     travelType @Common.ValueList: {
         $Type         : 'Common.ValueListType',
         CollectionPath: 'TravelType',
@@ -230,16 +228,11 @@ annotate service.FinanceAdvanceApproval with {
     }
 };
 
-annotate service.ExpenseClaims with @(UI.LineItem #ExpenseClaim: [
+annotate service.ExpenseClaims with @(UI.LineItem #ExpenseClaims1: [
     {
         $Type: 'UI.DataField',
         Value: ID,
-        Label: 'Expense Claim Id',
-    },
-    {
-        $Type: 'UI.DataField',
-        Value: travelRequest.employee.empName,
-        Label: 'Employee',
+        Label: 'ID',
     },
     {
         $Type: 'UI.DataField',
@@ -248,13 +241,13 @@ annotate service.ExpenseClaims with @(UI.LineItem #ExpenseClaim: [
     },
     {
         $Type: 'UI.DataField',
-        Value: expenseType_name,
-        Label: 'Expense Type',
+        Value: travelRequest.travelType_name,
+        Label: 'Travel Type ',
     },
     {
         $Type: 'UI.DataField',
-        Value: travelRequest.travelType_name,
-        Label: 'Travel Type',
+        Value: expenseType_name,
+        Label: 'Expense Type',
     },
     {
         $Type: 'UI.DataField',
@@ -268,6 +261,11 @@ annotate service.ExpenseClaims with @(UI.LineItem #ExpenseClaim: [
     },
     {
         $Type: 'UI.DataField',
+        Value: attachment,
+        Label: 'Attachment',
+    },
+    {
+        $Type: 'UI.DataField',
         Value: requestedAmount,
         Label: 'Requested Amount',
     },
@@ -277,18 +275,13 @@ annotate service.ExpenseClaims with @(UI.LineItem #ExpenseClaim: [
         Label: 'Approved Amount',
     },
     {
-        $Type: 'UI.DataField',
-        Value: attachment,
-        Label: 'Attachment',
-    },
-    {
         $Type : 'UI.DataFieldForAction',
-        Action: 'Travel_Expense_Service.rejectExpense',
-        Label : 'Reject Expense',
-    },
-    {
-        $Type : 'UI.DataFieldForAction',
-        Action: 'Travel_Expense_Service.approveExpense',
+        Action : 'Travel_Expense_Service.approveExpense',
         Label : 'Approve Expense',
+    },
+    {
+        $Type : 'UI.DataFieldForAction',
+        Action : 'Travel_Expense_Service.rejectExpense',
+        Label : 'Reject Expense',
     },
 ]);

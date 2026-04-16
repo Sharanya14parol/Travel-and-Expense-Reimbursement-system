@@ -12,9 +12,138 @@ module.exports = (srv) => {
     ExpenseType,
   } = srv.entities;
 
-  srv.after("Create", TravelRequests, async (data, req) => {
-    req.data.requestedOn = new Date();
+  srv.before("CREATE", ExpenseClaims, async (req) => {
+    const travelRequest = await tx.run(
+      SELECT.one.from(TravelRequests).where({ ID: req.data.travelRequest_ID }),
+    );
+    if (travelRequest.tripStatus !== "Trip completed") {
+    }
+    req.error(
+      400,
+      "Expense Claims can only be added after trip is marked as Completed",
+    );
   });
+
+  srv.on("approveExpense", ExpenseClaims, async (req) => {
+    const tx = cds.transaction(req);
+    const id = req.params[1]?.ID;
+    console.log(id);
+
+    const existingExpenseRecord = await tx.run(
+      SELECT.one
+        .from(ExpenseClaims)
+        .columns(
+          "claimStatus",
+          "requestedAmount",
+          "travelRequest_ID",
+          "expenseType_name",
+        )
+        .where({ ID: id }),
+    );
+
+    const existingTravelRequest = await tx.run(
+      SELECT.one
+        .from(TravelRequests)
+        .columns("travelType", "approvedAdvanceAmount", "expenseIncurred")
+        .where({ ID: existingExpenseRecord.travelRequest_ID }),
+    );
+    const policy = await tx.run(
+      SELECT.one.from(ExpensePolicies).columns("maxAllowedAmount").where({
+        policyName: existingExpenseRecord.expenseType_name,
+        travelType_name: existingTravelRequest.travelType_name,
+      }),
+    );
+    if (!policy) {
+      return req.error(400, "No policy found for this expense");
+    }
+    if (existingExpenseRecord.claimStatus != "Pending") {
+      return req.error(400, "This advance request has already been processed");
+    } else {
+      if (existingExpenseRecord.requestedAmount <= policy.maxAllowedAmount) {
+        await tx.run(
+          UPDATE(ExpenseClaims)
+            .set({
+              claimStatus: "Expense Approved",
+              approvedAmount: existingExpenseRecord.requestedAmount,
+            })
+            .where({ ID: id }),
+        );
+        await tx.run(
+          UPDATE(TravelRequests)
+            .set({
+              expenseIncurred:
+                existingTravelRequest.expenseIncurred +
+                existingExpenseRecord.requestedAmount,
+              finalReimbursedAmount:
+                existingTravelRequest.approvedAdvanceAmount +
+                existingExpenseRecord.requestedAmount,
+            })
+            .where({ ID: existingExpenseRecord.travelRequest_ID }),
+        );
+        req.notify("Request approved Successfully");
+      } else {
+        await tx.run(
+          UPDATE(ExpenseClaims)
+            .set({
+              claimStatus: "Expense Partially Approved",
+              approvedAmount: policy.maxAllowedAmount,
+            })
+            .where({ ID: id }),
+        );
+        await tx.run(
+          UPDATE(TravelRequests)
+            .set({
+              expenseIncurred:
+                existingTravelRequest.expenseIncurred +
+                existingExpenseRecord.requestedAmount,
+              finalReimbursedAmount:
+                existingTravelRequest.approvedAdvanceAmount +
+                policy.maxAllowedAmount,
+            })
+            .where({ ID: existingExpenseRecord.travelRequest_ID }),
+        );
+        req.notify("Exceeded Company Expense policy");
+      }
+    }
+  });
+
+  srv.on("rejectExpense", ExpenseClaims, async (req) => {
+    const tx = cds.transaction(req);
+    const id = req.params[1]?.ID;
+    const existingExpenseRecord = await tx.run(
+      SELECT.one
+        .from(ExpenseClaims)
+        .columns("claimStatus", "requestedAmount", "travelRequest_ID")
+        .where({ ID: id }),
+    );
+    const existingTravelRequest = await tx.run(
+      SELECT.one
+        .from(TravelRequests)
+        .columns("expenseIncurred")
+        .where({ ID: existingExpenseRecord.travelRequest_ID }),
+    );
+
+    if (existingExpenseRecord.claimStatus != "Pending") {
+      return req.error(400, "This advance request has already been processed");
+    } else {
+      await tx.run(
+        UPDATE(ExpenseClaims)
+          .set({ claimStatus: "Expense Rejected" })
+          .where({ ID: id }),
+      );
+      await tx.run(
+        UPDATE(TravelRequests)
+          .set({
+            expenseIncurred:
+              existingTravelRequest.expenseIncurred +
+              existingExpenseRecord.requestedAmount,
+          })
+          .where({ ID: existingExpenseRecord.travelRequest_ID }),
+      );
+      req.notify("Request Rejected");
+    }
+  });
+
   srv.on("approve", TravelRequests, async (req) => {
     const tx = cds.transaction(req);
     const id = req.params[0]?.ID;
@@ -28,13 +157,20 @@ module.exports = (srv) => {
     if (existing.advanceRequired == false) {
       await tx.run(
         UPDATE(TravelRequests)
-          .set({ status: "Manager Approved", tripStatus: "Trip approved" })
+          .set({
+            status: "Manager Approved",
+            tripStatus: "Trip approved",
+            managerapprovedOn: new Date(),
+          })
           .where({ ID: id }),
       );
     } else {
       await tx.run(
         UPDATE(TravelRequests)
-          .set({ status: "Pending Finance Approval" })
+          .set({
+            status: "Pending Finance Approval",
+            managerapprovedOn: new Date(),
+          })
           .where({ ID: id }),
       );
     }
@@ -172,26 +308,22 @@ module.exports = (srv) => {
     if (!existing) {
       return req.error(404, "Expense claim not found");
     }
+
     if (existing.claimStatus !== "Pending") {
-      return req.notify("Requested already processed");
+      return req.notify("Request already processed");
     }
+
     const travelRequest = await tx.run(
       SELECT.one.from(TravelRequests).where({ ID: existing.travelRequest_ID }),
     );
 
     if (!travelRequest) {
-      return req.error(404, "Related Travel Request not found");
+      return req.error(404, "Travel Request not found");
     }
-    const expenseType = await tx.run(
-      SELECT.one.from(ExpenseType).where({ name: existing.expenseType_name }),
-    );
 
-    if (!expenseType) {
-      return req.error(404, "Related Expense Type not found");
-    }
     const expensePolicy = await tx.run(
       SELECT.one.from(ExpensePolicies).where({
-        policyName: expenseType.name,
+        policyName: existing.expenseType_name,
         travelType_name: travelRequest.travelType_name,
       }),
     );
@@ -199,43 +331,47 @@ module.exports = (srv) => {
     if (!expensePolicy) {
       return req.error(404, "Expense policy not found");
     }
-    if (existing.amount <= expensePolicy.maxAllowedAmount) {
+
+    let approvedAmount = 0;
+
+    if (existing.requestedAmount <= expensePolicy.maxAllowedAmount) {
+      approvedAmount = existing.requestedAmount;
+
       await tx.run(
         UPDATE(ExpenseClaims)
           .set({
             claimStatus: "Approved by Finance Team",
-            approvedAmount: existing.amount,
+            approvedAmount: approvedAmount,
           })
           .where({ ID: id }),
       );
-      const ReimbursedAmount =
-        TravelRequests.approvedAdvanceAmount + approvedAmount;
-      await tx.run(
-        UPDATE(TravelRequests).set({
-          finalReimbursedAmount: ReimbursedAmount,
-        }),
-      );
-      req.notify("Requested Approved");
     } else {
+      approvedAmount = expensePolicy.maxAllowedAmount;
+
       await tx.run(
         UPDATE(ExpenseClaims)
           .set({
             claimStatus: "Partially Approved as per Company Expense Policy",
-            approvedAmount: expensePolicy.maxAllowedAmount,
+            approvedAmount: approvedAmount,
           })
           .where({ ID: id }),
       );
-      const ReimbursedAmount =
-        TravelRequests.approvedAdvanceAmount + approvedAmount;
-      await tx.run(
-        UPDATE(TravelRequests).set({
-          finalReimbursedAmount: ReimbursedAmount,
-        }),
-      );
-      req.notify("Requested Partially Approved");
     }
-  });
 
+    // ✅ CORRECT calculation using actual DB values
+    const reimbursedAmount =
+      (travelRequest.approvedAdvanceAmount || 0) + approvedAmount;
+
+    await tx.run(
+      UPDATE(TravelRequests)
+        .set({
+          finalReimbursedAmount: reimbursedAmount,
+        })
+        .where({ ID: existing.travelRequest_ID }),
+    );
+
+    req.notify("Request processed successfully");
+  });
   srv.after("CREATE", ExpenseClaims, async (data, req) => {
     const tx = cds.transaction(req);
 

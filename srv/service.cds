@@ -31,14 +31,19 @@ service Travel_Expense_Service {
             action advancereject();
         };
 
+    entity FinanceExpenseApproval as
+        projection on db.TravelRequests {
+            *
+        };
+
     @odata.draft.enabled
     entity AdvancePolicies        as projection on db.AdvancePolicies;
 
     @cds.redirection.target
     entity ExpenseClaims          as projection on db.ExpenseClaims
         actions {
-            action approve();
-            action reject();
+            action approveExpense();
+            action rejectExpense();
         };
 
     entity Department             as projection on db.Department;

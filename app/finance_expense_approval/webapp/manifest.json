@@ -1,7 +1,7 @@
 {
   "_version": "1.81.0",
   "sap.app": {
-    "id": "financeadvanceapproval",
+    "id": "financeexpenseapproval",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -13,7 +13,7 @@
     "sourceTemplate": {
       "id": "@sap/generator-fiori:lrop",
       "version": "1.20.2",
-      "toolsId": "67a3913b-9a5c-46bc-a946-ca689fec8723"
+      "toolsId": "f46473c6-314c-4dae-a474-2312840a9715"
     },
     "dataSources": {
       "mainService": {
@@ -60,7 +60,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "financeadvanceapproval.i18n.i18n"
+          "bundleName": "financeexpenseapproval.i18n.i18n"
         }
       },
       "": {
@@ -85,33 +85,28 @@
       "routes": [
         {
           "pattern": ":?query:",
-          "name": "FinanceAdvanceApprovalList",
-          "target": "FinanceAdvanceApprovalList"
+          "name": "FinanceExpenseApprovalList",
+          "target": "FinanceExpenseApprovalList"
         },
         {
-          "pattern": "FinanceAdvanceApproval({key}):?query:",
-          "name": "FinanceAdvanceApprovalObjectPage",
-          "target": "FinanceAdvanceApprovalObjectPage"
-        },
-        {
-          "name": "FinanceAdvanceApproval_expenseClaimObjectPage",
-          "pattern": "FinanceAdvanceApproval({key})/expenseClaim({expenseClaimKey}):?query:",
-          "target": "FinanceAdvanceApproval_expenseClaimObjectPage"
+          "pattern": "FinanceExpenseApproval({key}):?query:",
+          "name": "FinanceExpenseApprovalObjectPage",
+          "target": "FinanceExpenseApprovalObjectPage"
         }
       ],
       "targets": {
-        "FinanceAdvanceApprovalList": {
+        "FinanceExpenseApprovalList": {
           "type": "Component",
-          "id": "FinanceAdvanceApprovalList",
+          "id": "FinanceExpenseApprovalList",
           "name": "sap.fe.templates.ListReport",
           "options": {
             "settings": {
-              "contextPath": "/FinanceAdvanceApproval",
+              "contextPath": "/FinanceExpenseApproval",
               "variantManagement": "Page",
               "navigation": {
-                "FinanceAdvanceApproval": {
+                "FinanceExpenseApproval": {
                   "detail": {
-                    "route": "FinanceAdvanceApprovalObjectPage"
+                    "route": "FinanceExpenseApprovalObjectPage"
                   }
                 }
               },
@@ -125,33 +120,15 @@
             }
           }
         },
-        "FinanceAdvanceApprovalObjectPage": {
+        "FinanceExpenseApprovalObjectPage": {
           "type": "Component",
-          "id": "FinanceAdvanceApprovalObjectPage",
+          "id": "FinanceExpenseApprovalObjectPage",
           "name": "sap.fe.templates.ObjectPage",
           "options": {
             "settings": {
               "editableHeaderContent": false,
-              "contextPath": "/FinanceAdvanceApproval",
-              "sectionLayout": "Tabs",
-              "navigation": {
-                "expenseClaim": {
-                  "detail": {
-                    "route": "FinanceAdvanceApproval_expenseClaimObjectPage"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "FinanceAdvanceApproval_expenseClaimObjectPage": {
-          "type": "Component",
-          "id": "FinanceAdvanceApproval_expenseClaimObjectPage",
-          "name": "sap.fe.templates.ObjectPage",
-          "options": {
-            "settings": {
-              "navigation": {},
-              "contextPath": "/FinanceAdvanceApproval/expenseClaim"
+              "contextPath": "/FinanceExpenseApproval",
+              "sectionLayout": "Tabs"
             }
           }
         }

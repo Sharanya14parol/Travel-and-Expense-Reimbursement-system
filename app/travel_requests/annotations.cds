@@ -61,6 +61,11 @@ annotate service.TravelRequests with @(
             },
             {
                 $Type: 'UI.DataField',
+                Label: 'Manager approvedOn',
+                Value: managerapprovedOn,
+            },
+            {
+                $Type: 'UI.DataField',
                 Value: financeapprovedOn,
                 Label: 'Finance approvedOn',
             },
@@ -145,12 +150,7 @@ annotate service.TravelRequests with @(
             $Type : 'UI.DataFieldForAction',
             Action: 'Travel_Expense_Service.reject',
             Label : 'reject',
-        },
-        {
-            $Type : 'UI.DataFieldForAction',
-            Action: 'Travel_Expense_Service.SendBack',
-            Label : 'SendBack',
-        },
+        }
     ],
     UI.HeaderInfo                : {
         Title         : {
@@ -268,3 +268,20 @@ annotate service.ExpenseClaims with {
 annotate service.ExpenseClaims with {
     claimStatus @Common.FieldControl: #ReadOnly
 };
+
+annotate service.TravelRequests with {
+
+    financeapprovedOn      @UI.Hidden: {$edmJson: {$Not: {$Path: 'advanceRequired'}}};
+
+    requestedAdvanceAmount @UI.Hidden: {$edmJson: {$Not: {$Path: 'advanceRequired'}}};
+
+    approvedAdvanceAmount  @UI.Hidden: {$edmJson: {$Not: {$Path: 'advanceRequired'}}};
+
+};
+
+annotate service.TravelRequests with {
+    managerapprovedOn @UI.lineItem: [{
+        value: managerapprovedOn,
+        type : #DateTime
+    }];
+}
