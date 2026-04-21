@@ -16,7 +16,8 @@ type category : String enum {
 }
 
 entity Location {
-    key name : String;
+    key ID   : UUID @Core.Computed: true;
+        name : String;
 }
 
 entity TravelType {

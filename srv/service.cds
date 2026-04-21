@@ -39,7 +39,7 @@ service Travel_Expense_Service {
     @odata.draft.enabled
     entity AdvancePolicies        as projection on db.AdvancePolicies;
 
-    @cds.redirection.target
+    // @cds.redirection.target
     entity ExpenseClaims          as projection on db.ExpenseClaims
         actions {
             action approveExpense();

@@ -21,12 +21,12 @@ annotate service.Employees with @(
             },
             {
                 $Type: 'UI.DataField',
-                Value: department.name,
+                Value: department_ID,
                 Label: 'Department',
             },
             {
                 $Type: 'UI.DataField',
-                Value: location_name,
+                Value: location_ID,
                 Label: 'Location',
             },
         ],
@@ -68,7 +68,7 @@ annotate service.Employees with @(
         },
         {
             $Type: 'UI.DataField',
-            Value: location_name,
+            Value: location.name,
             Label: 'Location',
         },
     ],
@@ -156,37 +156,6 @@ annotate service.Employees with {
     ID @Common.FieldControl: #ReadOnly
 };
 
-annotate service.Employees with {
-    department @(
-        Common.ValueList               : {
-            $Type         : 'Common.ValueListType',
-            CollectionPath: 'Department',
-            Parameters    : [{
-                $Type            : 'Common.ValueListParameterInOut',
-                LocalDataProperty: department,
-                ValueListProperty: 'name',
-            }, ],
-            Label         : 'Department',
-        },
-        Common.ValueListWithFixedValues: true,
-    )
-};
-
-annotate service.Employees with {
-    location @(
-        Common.ValueList               : {
-            $Type         : 'Common.ValueListType',
-            CollectionPath: 'Location',
-            Parameters    : [{
-                $Type            : 'Common.ValueListParameterInOut',
-                LocalDataProperty: location,
-                ValueListProperty: 'name',
-            }, ],
-            Label         : 'Location',
-        },
-        Common.ValueListWithFixedValues: true,
-    )
-};
 
 annotate service.TravelRequests with {
     travelType @(
@@ -203,27 +172,69 @@ annotate service.TravelRequests with {
         Common.ValueListWithFixedValues: true,
     )
 };
+
 annotate service.TravelRequests with {
-    approvedAdvanceAmount @Common.FieldControl : #ReadOnly
+    approvedAdvanceAmount @Common.FieldControl: #ReadOnly
 };
 
 annotate service.TravelRequests with {
-    financeapprovedOn @Common.FieldControl : #ReadOnly
+    financeapprovedOn @Common.FieldControl: #ReadOnly
 };
 
 annotate service.TravelRequests with {
-    finalReimbursedAmount @Common.FieldControl : #ReadOnly
+    finalReimbursedAmount @Common.FieldControl: #ReadOnly
 };
 
 annotate service.TravelRequests with {
-    expenseIncurred @Common.FieldControl : #ReadOnly
+    expenseIncurred @Common.FieldControl: #ReadOnly
 };
 
 annotate service.TravelRequests with {
-    requestedOn @Common.FieldControl : #ReadOnly
+    requestedOn @Common.FieldControl: #ReadOnly
 };
 
 annotate service.TravelRequests with {
-    managerapprovedOn @Common.FieldControl : #ReadOnly
+    managerapprovedOn @Common.FieldControl: #ReadOnly
 };
+
+annotate service.Employees with {
+    department @(
+        Common.ValueList               : {
+            $Type         : 'Common.ValueListType',
+            CollectionPath: 'Department',
+            Parameters    : [
+                {
+                    $Type            : 'Common.ValueListParameterInOut',
+                    LocalDataProperty: department_ID,
+                    ValueListProperty: 'ID',
+                },
+                {
+                    $Type            : 'Common.ValueListParameterDisplayOnly',
+                    ValueListProperty: 'name',
+                }
+            ],
+            Label         : 'Department',
+        },
+        Common.Text                    : department.name,
+        Common.TextArrangement         : #TextOnly,
+        Common.ValueListWithFixedValues: true,
+    )
+};
+annotate service.Employees with {
+    location @(
+        Common.ExternalID : location.name,
+        Common.ValueList : {
+            $Type : 'Common.ValueListType',
+            CollectionPath : 'Location',
+            Parameters : [
+                {
+                    $Type : 'Common.ValueListParameterInOut',
+                    LocalDataProperty : location_ID,
+                    ValueListProperty : 'ID',
+                },
+            ],
+            Label : 'Location',
+        },
+        Common.ValueListWithFixedValues : true,
+)};
 

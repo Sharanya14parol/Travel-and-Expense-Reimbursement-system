@@ -170,9 +170,9 @@ annotate service.FinanceAdvanceApproval with @(
                 Label: 'Email',
             },
             {
-                $Type: 'UI.DataField',
-                Value: employee.location_name,
-                Label: 'Location',
+                $Type : 'UI.DataField',
+                Value : employee.location.name,
+                Label : 'Location',
             },
             {
                 $Type: 'UI.DataField',
@@ -209,10 +209,6 @@ annotate service.FinanceAdvanceApproval with {
             {
                 $Type            : 'Common.ValueListParameterDisplayOnly',
                 ValueListProperty: 'department',
-            },
-            {
-                $Type            : 'Common.ValueListParameterDisplayOnly',
-                ValueListProperty: 'designation',
             },
         ],
     }

@@ -26,6 +26,7 @@
     "app/*"
   ],
   "devDependencies": {
+    "@sap/cds-dk": "^9",
     "cds-plugin-ui5": "^0.13.0"
   },
   "_comment": "Since package.json file is generally read by node.js for the configurations ,it doesnt allow us to write normal comments, hence we can some fake or dummy fields like this. usage of sqlite below basically tells that we would be using an file based database and not an in memory db or postgresql or sap hana or an external db. If u add the below cds configuration then initially cds model from schema.cds file is read and then tables are created and then the sample data is fetched from csv files and loaded into the tables and everytime u run cds watch the same my-database.db file is used and the ones added in ui is also retained , However suppose if u dont use below cds configuration there is a possibility that the data added in ui might get stored in in-memory db rather than in our file based db and hence when we run cds watch again we might the lose the previously added data in ui ",
