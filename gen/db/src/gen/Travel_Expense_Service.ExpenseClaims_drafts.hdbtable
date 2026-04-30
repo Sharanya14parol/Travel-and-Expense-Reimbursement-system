@@ -1,0 +1,16 @@
+COLUMN TABLE Travel_Expense_Service_ExpenseClaims_drafts (
+  ID NVARCHAR(36) NOT NULL,
+  travelRequest_ID NVARCHAR(36) NULL,
+  expenseType_name NVARCHAR(5000) NULL,
+  expenseDate DATE NULL,
+  requestedAmount DECIMAL(15, 2) NULL,
+  approvedAmount DECIMAL(15, 2) NULL,
+  description NVARCHAR(5000) NULL,
+  attachment NVARCHAR(5000) NULL,
+  claimStatus NVARCHAR(5000) NULL DEFAULT 'Pending',
+  IsActiveEntity BOOLEAN,
+  HasActiveEntity BOOLEAN,
+  HasDraftEntity BOOLEAN,
+  DraftAdministrativeData_DraftUUID NVARCHAR(36) NOT NULL,
+  PRIMARY KEY(ID)
+)

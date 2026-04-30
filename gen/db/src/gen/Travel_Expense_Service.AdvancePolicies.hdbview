@@ -1,0 +1,9 @@
+VIEW Travel_Expense_Service_AdvancePolicies AS SELECT
+  AdvancePolicies_0.ID,
+  AdvancePolicies_0.policyName,
+  AdvancePolicies_0.minAmount,
+  AdvancePolicies_0.maxAmount,
+  AdvancePolicies_0.approvalPercent,
+  AdvancePolicies_0.action,
+  AdvancePolicies_0.description
+FROM travel_expense_management_system_AdvancePolicies AS AdvancePolicies_0

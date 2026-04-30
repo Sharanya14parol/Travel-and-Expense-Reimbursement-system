@@ -1,0 +1,4 @@
+COLUMN TABLE travel_expense_management_system_TravelType (
+  name NVARCHAR(5000) NOT NULL,
+  PRIMARY KEY(name)
+)

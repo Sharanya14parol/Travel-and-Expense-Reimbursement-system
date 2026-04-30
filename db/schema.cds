@@ -52,7 +52,7 @@ entity Vendor {
     key ID        : UUID @Core.Computed: true;
         name      : String;
         type      : String;
-        rating    : Decimal(2, 2);
+        rating    : Decimal(3,1);
         costLevel : String; // LOW / MEDIUM / HIGH
         isActive  : Boolean default true;
 }

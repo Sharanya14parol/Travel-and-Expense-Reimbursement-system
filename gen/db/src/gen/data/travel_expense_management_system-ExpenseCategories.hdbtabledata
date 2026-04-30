@@ -1,0 +1,31 @@
+{
+  "format_version": 1,
+  "imports": [
+    {
+      "target_table": "TRAVEL_EXPENSE_MANAGEMENT_SYSTEM_EXPENSECATEGORIES",
+      "source_data": {
+        "data_type": "CSV",
+        "file_name": "travel_expense_management_system-ExpenseCategories.csv",
+        "has_header": true,
+        "type_config": {
+          "delimiter": ","
+        }
+      },
+      "import_settings": {
+        "import_columns": [
+          "ID",
+          "CATEGORY",
+          "DESCRIPTION",
+          "RECEIPTREQUIRED"
+        ],
+        "include_filter": []
+      },
+      "column_mappings": {
+        "ID": "ID",
+        "CATEGORY": "category",
+        "DESCRIPTION": "description",
+        "RECEIPTREQUIRED": "receiptRequired"
+      }
+    }
+  ]
+}

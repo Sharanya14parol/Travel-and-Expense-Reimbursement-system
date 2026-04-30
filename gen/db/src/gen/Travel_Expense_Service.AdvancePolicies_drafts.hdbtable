@@ -1,0 +1,14 @@
+COLUMN TABLE Travel_Expense_Service_AdvancePolicies_drafts (
+  ID NVARCHAR(36) NOT NULL,
+  policyName NVARCHAR(5000) NULL,
+  minAmount DECIMAL(15, 2) NULL,
+  maxAmount DECIMAL(15, 2) NULL,
+  approvalPercent DECIMAL(5, 2) NULL,
+  action NVARCHAR(5000) NULL,
+  description NVARCHAR(5000) NULL,
+  IsActiveEntity BOOLEAN,
+  HasActiveEntity BOOLEAN,
+  HasDraftEntity BOOLEAN,
+  DraftAdministrativeData_DraftUUID NVARCHAR(36) NOT NULL,
+  PRIMARY KEY(ID)
+)

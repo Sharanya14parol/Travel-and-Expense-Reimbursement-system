@@ -1,0 +1,7 @@
+COLUMN TABLE travel_expense_management_system_ExpenseCategories (
+  ID NVARCHAR(36) NOT NULL,
+  category NVARCHAR(5000),
+  description NVARCHAR(5000),
+  receiptRequired BOOLEAN DEFAULT TRUE,
+  PRIMARY KEY(ID)
+)

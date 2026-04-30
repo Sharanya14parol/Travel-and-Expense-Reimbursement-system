@@ -1,0 +1,11 @@
+VIEW Travel_Expense_Service_ExpenseClaims AS SELECT
+  ExpenseClaims_0.ID,
+  ExpenseClaims_0.travelRequest_ID,
+  ExpenseClaims_0.expenseType_name,
+  ExpenseClaims_0.expenseDate,
+  ExpenseClaims_0.requestedAmount,
+  ExpenseClaims_0.approvedAmount,
+  ExpenseClaims_0.description,
+  ExpenseClaims_0.attachment,
+  ExpenseClaims_0.claimStatus
+FROM travel_expense_management_system_ExpenseClaims AS ExpenseClaims_0

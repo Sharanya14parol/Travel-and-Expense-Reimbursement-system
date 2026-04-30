@@ -1,0 +1,10 @@
+COLUMN TABLE travel_expense_management_system_ExpensePolicies (
+  ID NVARCHAR(36) NOT NULL,
+  policyName NVARCHAR(5000),
+  travelType_name NVARCHAR(5000),
+  expenseCategory_ID NVARCHAR(36),
+  maxAllowedAmount DECIMAL(15, 2),
+  receiptRequired BOOLEAN DEFAULT TRUE,
+  description NVARCHAR(5000),
+  PRIMARY KEY(ID)
+)

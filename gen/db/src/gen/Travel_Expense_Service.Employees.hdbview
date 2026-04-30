@@ -1,0 +1,9 @@
+VIEW Travel_Expense_Service_Employees AS SELECT
+  Employees_0.ID,
+  Employees_0.empName,
+  Employees_0.email,
+  Employees_0.department_ID,
+  Employees_0.manager_ID,
+  Employees_0.role,
+  Employees_0.location_ID
+FROM travel_expense_management_system_Employees AS Employees_0

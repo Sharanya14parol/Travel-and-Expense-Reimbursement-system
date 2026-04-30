@@ -1,0 +1,9 @@
+COLUMN TABLE travel_expense_management_system_Vendor (
+  ID NVARCHAR(36) NOT NULL,
+  name NVARCHAR(5000),
+  type NVARCHAR(5000),
+  rating DECIMAL(3, 1),
+  costLevel NVARCHAR(5000),
+  isActive BOOLEAN DEFAULT TRUE,
+  PRIMARY KEY(ID)
+)

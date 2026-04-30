@@ -1,0 +1,12 @@
+COLUMN TABLE travel_expense_management_system_ExpenseClaims (
+  ID NVARCHAR(36) NOT NULL,
+  travelRequest_ID NVARCHAR(36),
+  expenseType_name NVARCHAR(5000),
+  expenseDate DATE,
+  requestedAmount DECIMAL(15, 2),
+  approvedAmount DECIMAL(15, 2),
+  description NVARCHAR(5000),
+  attachment NVARCHAR(5000),
+  claimStatus NVARCHAR(5000) DEFAULT 'Pending',
+  PRIMARY KEY(ID)
+)

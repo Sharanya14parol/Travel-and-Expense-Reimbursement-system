@@ -1,0 +1,5 @@
+COLUMN TABLE travel_expense_management_system_Location (
+  ID NVARCHAR(36) NOT NULL,
+  name NVARCHAR(5000),
+  PRIMARY KEY(ID)
+)

@@ -1,0 +1,9 @@
+VIEW Travel_Expense_Service_ExpensePolicies AS SELECT
+  ExpensePolicies_0.ID,
+  ExpensePolicies_0.policyName,
+  ExpensePolicies_0.travelType_name,
+  ExpensePolicies_0.expenseCategory_ID,
+  ExpensePolicies_0.maxAllowedAmount,
+  ExpensePolicies_0.receiptRequired,
+  ExpensePolicies_0.description
+FROM travel_expense_management_system_ExpensePolicies AS ExpensePolicies_0

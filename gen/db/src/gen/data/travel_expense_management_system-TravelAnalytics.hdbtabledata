@@ -1,0 +1,35 @@
+{
+  "format_version": 1,
+  "imports": [
+    {
+      "target_table": "TRAVEL_EXPENSE_MANAGEMENT_SYSTEM_TRAVELANALYTICS",
+      "source_data": {
+        "data_type": "CSV",
+        "file_name": "travel_expense_management_system-TravelAnalytics.csv",
+        "has_header": true,
+        "type_config": {
+          "delimiter": ","
+        }
+      },
+      "import_settings": {
+        "import_columns": [
+          "ID",
+          "DEPARTMENT_ID",
+          "TOTALTRIPS",
+          "TOTALCOST",
+          "AVGCOST",
+          "MONTH"
+        ],
+        "include_filter": []
+      },
+      "column_mappings": {
+        "ID": "ID",
+        "DEPARTMENT_ID": "department_ID",
+        "TOTALTRIPS": "totalTrips",
+        "TOTALCOST": "totalCost",
+        "AVGCOST": "avgCost",
+        "MONTH": "month"
+      }
+    }
+  ]
+}

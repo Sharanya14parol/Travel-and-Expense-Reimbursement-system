@@ -1,0 +1,9 @@
+COLUMN TABLE travel_expense_management_system_TravelAnalytics (
+  ID NVARCHAR(36) NOT NULL,
+  department_ID NVARCHAR(36),
+  totalTrips INTEGER,
+  totalCost DECIMAL(15, 2),
+  avgCost DECIMAL(15, 2),
+  "MONTH" NVARCHAR(5000),
+  PRIMARY KEY(ID)
+)

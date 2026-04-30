@@ -1,0 +1,10 @@
+COLUMN TABLE travel_expense_management_system_Employees (
+  ID NVARCHAR(36) NOT NULL,
+  empName NVARCHAR(5000),
+  email NVARCHAR(5000),
+  department_ID NVARCHAR(36),
+  manager_ID NVARCHAR(36),
+  role NVARCHAR(5000),
+  location_ID NVARCHAR(36),
+  PRIMARY KEY(ID)
+)

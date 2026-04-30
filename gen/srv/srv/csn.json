@@ -1,0 +1,3055 @@
+{
+  "namespace": "travel_expense_management_system",
+  "definitions": {
+    "travel_expense_management_system.role": {
+      "kind": "type",
+      "type": "cds.String",
+      "enum": {
+        "Employee": {},
+        "Manager": {},
+        "FinanceHead": {},
+        "TravelAdmin": {},
+        "SuperAdmin": {}
+      }
+    },
+    "travel_expense_management_system.category": {
+      "kind": "type",
+      "type": "cds.String",
+      "enum": {
+        "Travel": {},
+        "Food": {},
+        "Hotel": {},
+        "Fuel": {}
+      }
+    },
+    "travel_expense_management_system.Location": {
+      "kind": "entity",
+      "elements": {
+        "ID": {
+          "@Core.Computed": true,
+          "key": true,
+          "type": "cds.UUID"
+        },
+        "name": {
+          "type": "cds.String"
+        }
+      }
+    },
+    "travel_expense_management_system.TravelType": {
+      "kind": "entity",
+      "elements": {
+        "name": {
+          "key": true,
+          "type": "cds.String"
+        }
+      }
+    },
+    "travel_expense_management_system.ExpenseType": {
+      "kind": "entity",
+      "elements": {
+        "name": {
+          "key": true,
+          "type": "cds.String"
+        }
+      }
+    },
+    "travel_expense_management_system.Department": {
+      "kind": "entity",
+      "elements": {
+        "ID": {
+          "@Core.Computed": true,
+          "key": true,
+          "type": "cds.UUID"
+        },
+        "name": {
+          "type": "cds.String"
+        },
+        "totalBudget": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "usedBudget": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "remainingBudget": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        }
+      }
+    },
+    "travel_expense_management_system.Employees": {
+      "kind": "entity",
+      "elements": {
+        "ID": {
+          "@Core.Computed": true,
+          "key": true,
+          "type": "cds.UUID"
+        },
+        "empName": {
+          "type": "cds.String"
+        },
+        "email": {
+          "type": "cds.String"
+        },
+        "department": {
+          "type": "cds.Association",
+          "target": "travel_expense_management_system.Department",
+          "keys": [
+            {
+              "ref": [
+                "ID"
+              ]
+            }
+          ]
+        },
+        "manager": {
+          "type": "cds.Association",
+          "target": "travel_expense_management_system.Employees",
+          "keys": [
+            {
+              "ref": [
+                "ID"
+              ]
+            }
+          ]
+        },
+        "role": {
+          "type": "travel_expense_management_system.role"
+        },
+        "location": {
+          "type": "cds.Association",
+          "target": "travel_expense_management_system.Location",
+          "keys": [
+            {
+              "ref": [
+                "ID"
+              ]
+            }
+          ]
+        },
+        "travelRequest": {
+          "type": "cds.Composition",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "travel_expense_management_system.TravelRequests",
+          "on": [
+            {
+              "ref": [
+                "travelRequest",
+                "employee"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "$self"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "travel_expense_management_system.Vendor": {
+      "kind": "entity",
+      "elements": {
+        "ID": {
+          "@Core.Computed": true,
+          "key": true,
+          "type": "cds.UUID"
+        },
+        "name": {
+          "type": "cds.String"
+        },
+        "type": {
+          "type": "cds.String"
+        },
+        "rating": {
+          "type": "cds.Decimal",
+          "precision": 3,
+          "scale": 1
+        },
+        "costLevel": {
+          "type": "cds.String"
+        },
+        "isActive": {
+          "type": "cds.Boolean",
+          "default": {
+            "val": true
+          }
+        }
+      }
+    },
+    "travel_expense_management_system.ExpenseCategories": {
+      "kind": "entity",
+      "elements": {
+        "ID": {
+          "@Core.Computed": true,
+          "key": true,
+          "type": "cds.UUID"
+        },
+        "category": {
+          "type": "travel_expense_management_system.category"
+        },
+        "description": {
+          "type": "cds.String"
+        },
+        "receiptRequired": {
+          "type": "cds.Boolean",
+          "default": {
+            "val": true
+          }
+        },
+        "expensePolicy": {
+          "type": "cds.Association",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "travel_expense_management_system.ExpensePolicies",
+          "on": [
+            {
+              "ref": [
+                "expensePolicy",
+                "expenseCategory"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "$self"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "travel_expense_management_system.AdvancePolicies": {
+      "kind": "entity",
+      "elements": {
+        "ID": {
+          "@Core.Computed": true,
+          "key": true,
+          "type": "cds.UUID"
+        },
+        "policyName": {
+          "type": "cds.String"
+        },
+        "minAmount": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "maxAmount": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "approvalPercent": {
+          "type": "cds.Decimal",
+          "precision": 5,
+          "scale": 2
+        },
+        "action": {
+          "type": "cds.String"
+        },
+        "description": {
+          "type": "cds.String"
+        }
+      }
+    },
+    "travel_expense_management_system.ExpensePolicies": {
+      "kind": "entity",
+      "elements": {
+        "ID": {
+          "@Core.Computed": true,
+          "key": true,
+          "type": "cds.UUID"
+        },
+        "policyName": {
+          "type": "cds.String"
+        },
+        "travelType": {
+          "type": "cds.Association",
+          "target": "travel_expense_management_system.TravelType",
+          "keys": [
+            {
+              "ref": [
+                "name"
+              ]
+            }
+          ]
+        },
+        "expenseCategory": {
+          "type": "cds.Association",
+          "target": "travel_expense_management_system.ExpenseCategories",
+          "keys": [
+            {
+              "ref": [
+                "ID"
+              ]
+            }
+          ]
+        },
+        "maxAllowedAmount": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "receiptRequired": {
+          "type": "cds.Boolean",
+          "default": {
+            "val": true
+          }
+        },
+        "description": {
+          "type": "cds.String"
+        }
+      }
+    },
+    "travel_expense_management_system.TravelRequests": {
+      "kind": "entity",
+      "elements": {
+        "ID": {
+          "@Core.Computed": true,
+          "key": true,
+          "type": "cds.UUID"
+        },
+        "employee": {
+          "type": "cds.Association",
+          "target": "travel_expense_management_system.Employees",
+          "keys": [
+            {
+              "ref": [
+                "ID"
+              ]
+            }
+          ]
+        },
+        "department": {
+          "type": "cds.Association",
+          "target": "travel_expense_management_system.Department",
+          "keys": [
+            {
+              "ref": [
+                "ID"
+              ]
+            }
+          ]
+        },
+        "clientName": {
+          "type": "cds.String"
+        },
+        "travelPurpose": {
+          "type": "cds.String"
+        },
+        "travelType": {
+          "type": "cds.Association",
+          "target": "travel_expense_management_system.TravelType",
+          "keys": [
+            {
+              "ref": [
+                "name"
+              ]
+            }
+          ]
+        },
+        "vendor": {
+          "type": "cds.Association",
+          "target": "travel_expense_management_system.Vendor",
+          "keys": [
+            {
+              "ref": [
+                "ID"
+              ]
+            }
+          ]
+        },
+        "status": {
+          "type": "cds.String",
+          "default": {
+            "val": "Pending Manager Approval"
+          }
+        },
+        "fromLocation": {
+          "type": "cds.String"
+        },
+        "toLocation": {
+          "type": "cds.String"
+        },
+        "startDate": {
+          "type": "cds.Date"
+        },
+        "endDate": {
+          "type": "cds.Date"
+        },
+        "estimatedCost": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "requestedOn": {
+          "type": "cds.Date",
+          "default": {
+            "func": "CURRENT_DATE"
+          }
+        },
+        "approvedOn": {
+          "type": "cds.Date"
+        },
+        "advanceRequired": {
+          "type": "cds.Boolean",
+          "default": {
+            "val": false
+          }
+        },
+        "requestedAdvanceAmount": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2,
+          "default": {
+            "val": 0
+          }
+        },
+        "approvedAdvanceAmount": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2,
+          "default": {
+            "val": 0
+          }
+        },
+        "managerapprovedOn": {
+          "type": "cds.Date"
+        },
+        "financeapprovedOn": {
+          "type": "cds.Date"
+        },
+        "finalReimbursedAmount": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2,
+          "default": {
+            "val": 0
+          }
+        },
+        "tripStatus": {
+          "type": "cds.String"
+        },
+        "expenseIncurred": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2,
+          "default": {
+            "val": 0
+          }
+        },
+        "expenseClaim": {
+          "type": "cds.Composition",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "travel_expense_management_system.ExpenseClaims",
+          "on": [
+            {
+              "ref": [
+                "expenseClaim",
+                "travelRequest"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "$self"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "travel_expense_management_system.ExpenseClaims": {
+      "kind": "entity",
+      "elements": {
+        "ID": {
+          "@Core.Computed": true,
+          "key": true,
+          "type": "cds.UUID"
+        },
+        "travelRequest": {
+          "type": "cds.Association",
+          "target": "travel_expense_management_system.TravelRequests",
+          "keys": [
+            {
+              "ref": [
+                "ID"
+              ]
+            }
+          ]
+        },
+        "expenseType": {
+          "type": "cds.Association",
+          "target": "travel_expense_management_system.ExpenseType",
+          "keys": [
+            {
+              "ref": [
+                "name"
+              ]
+            }
+          ]
+        },
+        "expenseDate": {
+          "type": "cds.Date"
+        },
+        "requestedAmount": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "approvedAmount": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "description": {
+          "type": "cds.String"
+        },
+        "attachment": {
+          "type": "cds.String"
+        },
+        "claimStatus": {
+          "type": "cds.String",
+          "default": {
+            "val": "Pending"
+          }
+        }
+      }
+    },
+    "travel_expense_management_system.TravelAnalytics": {
+      "kind": "entity",
+      "elements": {
+        "ID": {
+          "@Core.Computed": true,
+          "key": true,
+          "type": "cds.UUID"
+        },
+        "department": {
+          "type": "cds.Association",
+          "target": "travel_expense_management_system.Department",
+          "keys": [
+            {
+              "ref": [
+                "ID"
+              ]
+            }
+          ]
+        },
+        "totalTrips": {
+          "type": "cds.Integer"
+        },
+        "totalCost": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "avgCost": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "month": {
+          "type": "cds.String"
+        }
+      }
+    },
+    "Travel_Expense_Service": {
+      "@source": "srv/service.cds",
+      "kind": "service"
+    },
+    "Travel_Expense_Service.Employees": {
+      "kind": "entity",
+      "@odata.draft.enabled": true,
+      "@UI.FieldGroup#GeneratedGroup.$Type": "UI.FieldGroupType",
+      "@UI.FieldGroup#GeneratedGroup.Data": [
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "ID"
+          },
+          "Label": "ID"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "Name",
+          "Value": {
+            "=": "empName"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "Email",
+          "Value": {
+            "=": "email"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "department_ID"
+          },
+          "Label": "Department"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "location_ID"
+          },
+          "Label": "Location"
+        }
+      ],
+      "@UI.Facets": [
+        {
+          "$Type": "UI.ReferenceFacet",
+          "ID": "GeneratedFacet1",
+          "Label": "General Information",
+          "Target": "@UI.FieldGroup#GeneratedGroup"
+        },
+        {
+          "$Type": "UI.ReferenceFacet",
+          "Label": "Travel Requests",
+          "ID": "TravelRequests",
+          "Target": "travelRequest/@UI.LineItem#TravelRequests"
+        }
+      ],
+      "@UI.LineItem": [
+        {
+          "$Type": "UI.DataField",
+          "Label": "Name",
+          "Value": {
+            "=": "empName"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "Email",
+          "Value": {
+            "=": "email"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "Department",
+          "Value": {
+            "=": "department.name"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "Role",
+          "Value": {
+            "=": "role"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "location.name"
+          },
+          "Label": "Location"
+        }
+      ],
+      "@UI.HeaderInfo.Title.$Type": "UI.DataField",
+      "@UI.HeaderInfo.Title.Value": {
+        "=": "empName"
+      },
+      "@UI.HeaderInfo.TypeName": "",
+      "@UI.HeaderInfo.TypeNamePlural": "",
+      "@UI.HeaderInfo.TypeImageUrl": "sap-icon://person-placeholder",
+      "projection": {
+        "from": {
+          "ref": [
+            "travel_expense_management_system.Employees"
+          ]
+        }
+      },
+      "elements": {
+        "ID": {
+          "@Common.FieldControl": {
+            "#": "ReadOnly"
+          },
+          "@Core.Computed": true,
+          "key": true,
+          "type": "cds.UUID"
+        },
+        "empName": {
+          "type": "cds.String"
+        },
+        "email": {
+          "type": "cds.String"
+        },
+        "department": {
+          "@Common.ValueList.$Type": "Common.ValueListType",
+          "@Common.ValueList.CollectionPath": "Department",
+          "@Common.ValueList.Parameters": [
+            {
+              "$Type": "Common.ValueListParameterInOut",
+              "LocalDataProperty": {
+                "=": "department_ID"
+              },
+              "ValueListProperty": "ID"
+            },
+            {
+              "$Type": "Common.ValueListParameterDisplayOnly",
+              "ValueListProperty": "name"
+            }
+          ],
+          "@Common.ValueList.Label": "Department",
+          "@Common.Text": {
+            "=": "department.name"
+          },
+          "@Common.TextArrangement": {
+            "#": "TextOnly"
+          },
+          "@Common.ValueListWithFixedValues": true,
+          "type": "cds.Association",
+          "target": "Travel_Expense_Service.Department",
+          "keys": [
+            {
+              "ref": [
+                "ID"
+              ]
+            }
+          ]
+        },
+        "manager": {
+          "type": "cds.Association",
+          "target": "Travel_Expense_Service.Employees",
+          "keys": [
+            {
+              "ref": [
+                "ID"
+              ]
+            }
+          ]
+        },
+        "role": {
+          "type": "travel_expense_management_system.role"
+        },
+        "location": {
+          "@Common.ExternalID": {
+            "=": "location.name"
+          },
+          "@Common.ValueList.$Type": "Common.ValueListType",
+          "@Common.ValueList.CollectionPath": "Location",
+          "@Common.ValueList.Parameters": [
+            {
+              "$Type": "Common.ValueListParameterInOut",
+              "LocalDataProperty": {
+                "=": "location_ID"
+              },
+              "ValueListProperty": "ID"
+            }
+          ],
+          "@Common.ValueList.Label": "Location",
+          "@Common.ValueListWithFixedValues": true,
+          "type": "cds.Association",
+          "target": "Travel_Expense_Service.Location",
+          "keys": [
+            {
+              "ref": [
+                "ID"
+              ]
+            }
+          ]
+        },
+        "travelRequest": {
+          "type": "cds.Composition",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "Travel_Expense_Service.TravelRequests",
+          "on": [
+            {
+              "ref": [
+                "travelRequest",
+                "employee"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "$self"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "Travel_Expense_Service.ExpenseCategories": {
+      "kind": "entity",
+      "@odata.draft.enabled": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "travel_expense_management_system.ExpenseCategories"
+          ]
+        }
+      },
+      "elements": {
+        "ID": {
+          "@Core.Computed": true,
+          "key": true,
+          "type": "cds.UUID"
+        },
+        "category": {
+          "type": "travel_expense_management_system.category"
+        },
+        "description": {
+          "type": "cds.String"
+        },
+        "receiptRequired": {
+          "type": "cds.Boolean",
+          "default": {
+            "val": true
+          }
+        },
+        "expensePolicy": {
+          "type": "cds.Association",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "Travel_Expense_Service.ExpensePolicies",
+          "on": [
+            {
+              "ref": [
+                "expensePolicy",
+                "expenseCategory"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "$self"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "Travel_Expense_Service.ExpensePolicies": {
+      "kind": "entity",
+      "@odata.draft.enabled": true,
+      "@UI.FieldGroup#GeneratedGroup.$Type": "UI.FieldGroupType",
+      "@UI.FieldGroup#GeneratedGroup.Data": [
+        {
+          "$Type": "UI.DataField",
+          "Label": "policyName",
+          "Value": {
+            "=": "policyName"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "travelType",
+          "Value": {
+            "=": "travelType"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "maxAllowedAmount",
+          "Value": {
+            "=": "maxAllowedAmount"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "receiptRequired",
+          "Value": {
+            "=": "receiptRequired"
+          }
+        }
+      ],
+      "@UI.Facets": [
+        {
+          "$Type": "UI.ReferenceFacet",
+          "ID": "GeneratedFacet1",
+          "Label": "General Information",
+          "Target": "@UI.FieldGroup#GeneratedGroup"
+        }
+      ],
+      "@UI.LineItem": [
+        {
+          "$Type": "UI.DataField",
+          "Label": "policyName",
+          "Value": {
+            "=": "policyName"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "travelType",
+          "Value": {
+            "=": "travelType"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "maxAllowedAmount",
+          "Value": {
+            "=": "maxAllowedAmount"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "receiptRequired",
+          "Value": {
+            "=": "receiptRequired"
+          }
+        }
+      ],
+      "projection": {
+        "from": {
+          "ref": [
+            "travel_expense_management_system.ExpensePolicies"
+          ]
+        }
+      },
+      "elements": {
+        "ID": {
+          "@Core.Computed": true,
+          "key": true,
+          "type": "cds.UUID"
+        },
+        "policyName": {
+          "type": "cds.String"
+        },
+        "travelType": {
+          "type": "cds.Association",
+          "target": "Travel_Expense_Service.TravelType",
+          "keys": [
+            {
+              "ref": [
+                "name"
+              ]
+            }
+          ]
+        },
+        "expenseCategory": {
+          "@Common.ValueList.$Type": "Common.ValueListType",
+          "@Common.ValueList.CollectionPath": "ExpenseCategories",
+          "@Common.ValueList.Parameters": [
+            {
+              "$Type": "Common.ValueListParameterInOut",
+              "LocalDataProperty": {
+                "=": "expenseCategory_ID"
+              },
+              "ValueListProperty": "ID"
+            },
+            {
+              "$Type": "Common.ValueListParameterDisplayOnly",
+              "ValueListProperty": "category"
+            },
+            {
+              "$Type": "Common.ValueListParameterDisplayOnly",
+              "ValueListProperty": "description"
+            },
+            {
+              "$Type": "Common.ValueListParameterDisplayOnly",
+              "ValueListProperty": "receiptRequired"
+            }
+          ],
+          "type": "cds.Association",
+          "target": "Travel_Expense_Service.ExpenseCategories",
+          "keys": [
+            {
+              "ref": [
+                "ID"
+              ]
+            }
+          ]
+        },
+        "maxAllowedAmount": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "receiptRequired": {
+          "type": "cds.Boolean",
+          "default": {
+            "val": true
+          }
+        },
+        "description": {
+          "type": "cds.String"
+        }
+      }
+    },
+    "Travel_Expense_Service.TravelRequests": {
+      "kind": "entity",
+      "@cds.redirection.target": true,
+      "@UI.LineItem#TravelRequests": [
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "travelPurpose"
+          },
+          "Label": "Travel Purpose"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "travelType_name"
+          },
+          "Label": "Travel Type"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "employee.travelRequest.fromLocation"
+          },
+          "Label": "From"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "employee.travelRequest.toLocation"
+          },
+          "Label": "To"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "employee.travelRequest.startDate"
+          },
+          "Label": "Start"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "employee.travelRequest.endDate"
+          },
+          "Label": "End"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "employee.travelRequest.estimatedCost"
+          },
+          "Label": "Estimated Cost"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "employee.travelRequest.advanceRequired"
+          },
+          "Label": "Advance Required"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "employee.travelRequest.requestedAdvanceAmount"
+          },
+          "Label": "Advance Amount"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "employee.travelRequest.status"
+          },
+          "Label": "Status"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "tripStatus"
+          },
+          "Label": "Trip Status"
+        },
+        {
+          "$Type": "UI.DataFieldForAction",
+          "Action": "Travel_Expense_Service.tripCompleted",
+          "Label": "Trip Completed",
+          "Inline": true
+        }
+      ],
+      "@UI.FieldGroup#GeneratedGroup.$Type": "UI.FieldGroupType",
+      "@UI.FieldGroup#GeneratedGroup.Data": [
+        {
+          "$Type": "UI.DataField",
+          "Label": "Travel Purpose",
+          "Value": {
+            "=": "travelPurpose"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "Status",
+          "Value": {
+            "=": "status"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "travelType_name"
+          },
+          "Label": "Travel Type"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "From Location",
+          "Value": {
+            "=": "fromLocation"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "To Location",
+          "Value": {
+            "=": "toLocation"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "Start Date",
+          "Value": {
+            "=": "startDate"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "End Date",
+          "Value": {
+            "=": "endDate"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "Estimated Cost",
+          "Value": {
+            "=": "estimatedCost"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "Advance Required",
+          "Value": {
+            "=": "advanceRequired"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "Advance Amount",
+          "Value": {
+            "=": "requestedAdvanceAmount"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "Approved Advance Amount",
+          "Value": {
+            "=": "approvedAdvanceAmount"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "Manager approvedOn",
+          "Value": {
+            "=": "managerapprovedOn"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "financeapprovedOn"
+          },
+          "Label": "Finance approvedOn"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "requestedOn"
+          },
+          "Label": "Requested On"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "finalReimbursedAmount"
+          },
+          "Label": "Reimbursed Amount"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "expenseIncurred"
+          },
+          "Label": "Expense Incurred"
+        }
+      ],
+      "@UI.Facets": [
+        {
+          "$Type": "UI.ReferenceFacet",
+          "ID": "GeneratedFacet1",
+          "Label": "Travel Request Details",
+          "Target": "@UI.FieldGroup#GeneratedGroup"
+        },
+        {
+          "$Type": "UI.ReferenceFacet",
+          "Label": "Expense Claims",
+          "ID": "ExpenseClaims",
+          "Target": "expenseClaim/@UI.LineItem#ExpenseClaims"
+        }
+      ],
+      "@UI.LineItem": [
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "employee.empName"
+          },
+          "Label": "Employee"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "Travel Purpose",
+          "Value": {
+            "=": "travelPurpose"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "travelType_name"
+          },
+          "Label": "Travel Type"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "Status",
+          "Value": {
+            "=": "status"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "From",
+          "Value": {
+            "=": "fromLocation"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "To",
+          "Value": {
+            "=": "toLocation"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "startDate"
+          },
+          "Label": "Start"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "endDate"
+          },
+          "Label": "End"
+        },
+        {
+          "$Type": "UI.DataFieldForAction",
+          "Action": "Travel_Expense_Service.approve",
+          "Label": "approve"
+        },
+        {
+          "$Type": "UI.DataFieldForAction",
+          "Action": "Travel_Expense_Service.reject",
+          "Label": "reject"
+        }
+      ],
+      "@UI.HeaderInfo.Title.$Type": "UI.DataField",
+      "@UI.HeaderInfo.Title.Value": {
+        "=": "travelPurpose"
+      },
+      "@UI.HeaderInfo.TypeName": "",
+      "@UI.HeaderInfo.TypeNamePlural": "",
+      "@UI.HeaderInfo.Description.$Type": "UI.DataField",
+      "@UI.HeaderInfo.Description.Value": {
+        "=": "travelType_name"
+      },
+      "@UI.HeaderInfo.TypeImageUrl": "sap-icon://person-placeholder",
+      "projection": {
+        "from": {
+          "ref": [
+            "travel_expense_management_system.TravelRequests"
+          ]
+        }
+      },
+      "elements": {
+        "ID": {
+          "@Core.Computed": true,
+          "key": true,
+          "type": "cds.UUID"
+        },
+        "employee": {
+          "@Common.ValueList.$Type": "Common.ValueListType",
+          "@Common.ValueList.CollectionPath": "Employees",
+          "@Common.ValueList.Parameters": [
+            {
+              "$Type": "Common.ValueListParameterInOut",
+              "LocalDataProperty": {
+                "=": "employee_ID"
+              },
+              "ValueListProperty": "ID"
+            },
+            {
+              "$Type": "Common.ValueListParameterDisplayOnly",
+              "ValueListProperty": "empName"
+            },
+            {
+              "$Type": "Common.ValueListParameterDisplayOnly",
+              "ValueListProperty": "email"
+            },
+            {
+              "$Type": "Common.ValueListParameterDisplayOnly",
+              "ValueListProperty": "department"
+            },
+            {
+              "$Type": "Common.ValueListParameterDisplayOnly",
+              "ValueListProperty": "designation"
+            }
+          ],
+          "type": "cds.Association",
+          "target": "Travel_Expense_Service.Employees",
+          "keys": [
+            {
+              "ref": [
+                "ID"
+              ]
+            }
+          ]
+        },
+        "department": {
+          "type": "cds.Association",
+          "target": "Travel_Expense_Service.Department",
+          "keys": [
+            {
+              "ref": [
+                "ID"
+              ]
+            }
+          ]
+        },
+        "clientName": {
+          "type": "cds.String"
+        },
+        "travelPurpose": {
+          "type": "cds.String"
+        },
+        "travelType": {
+          "@Common.ValueList.$Type": "Common.ValueListType",
+          "@Common.ValueList.CollectionPath": "TravelType",
+          "@Common.ValueList.Parameters": [
+            {
+              "$Type": "Common.ValueListParameterInOut",
+              "LocalDataProperty": {
+                "=": "travelType_name"
+              },
+              "ValueListProperty": "name"
+            }
+          ],
+          "@Common.ValueList.Label": "Travel type",
+          "@Common.ValueListWithFixedValues": true,
+          "type": "cds.Association",
+          "target": "Travel_Expense_Service.TravelType",
+          "keys": [
+            {
+              "ref": [
+                "name"
+              ]
+            }
+          ]
+        },
+        "vendor": {
+          "type": "cds.Association",
+          "target": "travel_expense_management_system.Vendor",
+          "keys": [
+            {
+              "ref": [
+                "ID"
+              ]
+            }
+          ]
+        },
+        "status": {
+          "@Common.FieldControl": {
+            "#": "ReadOnly"
+          },
+          "type": "cds.String",
+          "default": {
+            "val": "Pending Manager Approval"
+          }
+        },
+        "fromLocation": {
+          "type": "cds.String"
+        },
+        "toLocation": {
+          "type": "cds.String"
+        },
+        "startDate": {
+          "type": "cds.Date"
+        },
+        "endDate": {
+          "type": "cds.Date"
+        },
+        "estimatedCost": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "requestedOn": {
+          "@Common.FieldControl": {
+            "#": "ReadOnly"
+          },
+          "type": "cds.Date",
+          "default": {
+            "func": "CURRENT_DATE"
+          }
+        },
+        "approvedOn": {
+          "type": "cds.Date"
+        },
+        "advanceRequired": {
+          "type": "cds.Boolean",
+          "default": {
+            "val": false
+          }
+        },
+        "requestedAdvanceAmount": {
+          "@UI.Hidden.$edmJson.$Not.$Path": "advanceRequired",
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2,
+          "default": {
+            "val": 0
+          }
+        },
+        "approvedAdvanceAmount": {
+          "@Common.FieldControl": {
+            "#": "ReadOnly"
+          },
+          "@UI.Hidden.$edmJson.$Not.$Path": "advanceRequired",
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2,
+          "default": {
+            "val": 0
+          }
+        },
+        "managerapprovedOn": {
+          "@Common.FieldControl": {
+            "#": "ReadOnly"
+          },
+          "@UI.lineItem": [
+            {
+              "value": {
+                "=": "managerapprovedOn"
+              },
+              "type": {
+                "#": "DateTime"
+              }
+            }
+          ],
+          "type": "cds.Date"
+        },
+        "financeapprovedOn": {
+          "@Common.FieldControl": {
+            "#": "ReadOnly"
+          },
+          "@UI.Hidden.$edmJson.$Not.$Path": "advanceRequired",
+          "type": "cds.Date"
+        },
+        "finalReimbursedAmount": {
+          "@Common.FieldControl": {
+            "#": "ReadOnly"
+          },
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2,
+          "default": {
+            "val": 0
+          }
+        },
+        "tripStatus": {
+          "type": "cds.String"
+        },
+        "expenseIncurred": {
+          "@Common.FieldControl": {
+            "#": "ReadOnly"
+          },
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2,
+          "default": {
+            "val": 0
+          }
+        },
+        "expenseClaim": {
+          "type": "cds.Composition",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "Travel_Expense_Service.ExpenseClaims",
+          "on": [
+            {
+              "ref": [
+                "expenseClaim",
+                "travelRequest"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "$self"
+              ]
+            }
+          ]
+        }
+      },
+      "actions": {
+        "approve": {
+          "kind": "action"
+        },
+        "reject": {
+          "kind": "action"
+        },
+        "tripCompleted": {
+          "kind": "action"
+        }
+      }
+    },
+    "Travel_Expense_Service.FinanceAdvanceApproval": {
+      "kind": "entity",
+      "@UI.FieldGroup#GeneratedGroup.$Type": "UI.FieldGroupType",
+      "@UI.FieldGroup#GeneratedGroup.Data": [
+        {
+          "$Type": "UI.DataField",
+          "Label": "Travel Purpose",
+          "Value": {
+            "=": "travelPurpose"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "Travel Type",
+          "Value": {
+            "=": "travelType_name"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "Status",
+          "Value": {
+            "=": "status"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "From Location",
+          "Value": {
+            "=": "fromLocation"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "To Location",
+          "Value": {
+            "=": "toLocation"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "Start Date",
+          "Value": {
+            "=": "startDate"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "End Date",
+          "Value": {
+            "=": "endDate"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "Estimated Cost",
+          "Value": {
+            "=": "estimatedCost"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "Requested On",
+          "Value": {
+            "=": "requestedOn"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "Advance Required",
+          "Value": {
+            "=": "advanceRequired"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "Requested Advance Amount",
+          "Value": {
+            "=": "requestedAdvanceAmount"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "Approved Advance Amount",
+          "Value": {
+            "=": "approvedAdvanceAmount"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "managerapprovedOn"
+          },
+          "Label": "Manager ApprovedOn"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "Finance Approved On",
+          "Value": {
+            "=": "financeapprovedOn"
+          }
+        }
+      ],
+      "@UI.Facets": [
+        {
+          "$Type": "UI.ReferenceFacet",
+          "Label": "General Information",
+          "ID": "TravelRequests",
+          "Target": "@UI.FieldGroup#TravelRequests"
+        },
+        {
+          "$Type": "UI.ReferenceFacet",
+          "ID": "GeneratedFacet1",
+          "Label": "Travel Request",
+          "Target": "@UI.FieldGroup#GeneratedGroup"
+        }
+      ],
+      "@UI.LineItem": [
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "employee.empName"
+          },
+          "Label": "empName"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "travelPurpose",
+          "Value": {
+            "=": "travelPurpose"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "travelType_name",
+          "Value": {
+            "=": "travelType_name"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "status",
+          "Value": {
+            "=": "status"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "fromLocation",
+          "Value": {
+            "=": "fromLocation"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "toLocation"
+          },
+          "Label": "toLocation"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "startDate"
+          },
+          "Label": "startDate"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "endDate"
+          },
+          "Label": "endDate"
+        },
+        {
+          "$Type": "UI.DataFieldForAction",
+          "Action": "Travel_Expense_Service.advanceapprove",
+          "Label": "advanceapprove"
+        },
+        {
+          "$Type": "UI.DataFieldForAction",
+          "Action": "Travel_Expense_Service.advancereject",
+          "Label": "advancereject"
+        }
+      ],
+      "@UI.HeaderInfo.Title.$Type": "UI.DataField",
+      "@UI.HeaderInfo.Title.Value": {
+        "=": "employee.empName"
+      },
+      "@UI.HeaderInfo.TypeName": "",
+      "@UI.HeaderInfo.TypeNamePlural": "",
+      "@UI.FieldGroup#TravelRequests.$Type": "UI.FieldGroupType",
+      "@UI.FieldGroup#TravelRequests.Data": [
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "employee.ID"
+          },
+          "Label": "ID"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "employee.empName"
+          },
+          "Label": "Name"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "employee.email"
+          },
+          "Label": "Email"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "employee.location.name"
+          },
+          "Label": "Location"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "employee.role"
+          },
+          "Label": "Role"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "employee.department.name"
+          },
+          "Label": "Department"
+        }
+      ],
+      "projection": {
+        "from": {
+          "ref": [
+            "travel_expense_management_system.TravelRequests"
+          ]
+        },
+        "columns": [
+          "*"
+        ],
+        "where": [
+          {
+            "ref": [
+              "advanceRequired"
+            ]
+          },
+          "=",
+          {
+            "val": true
+          }
+        ]
+      },
+      "elements": {
+        "ID": {
+          "@Core.Computed": true,
+          "key": true,
+          "type": "cds.UUID"
+        },
+        "employee": {
+          "@Common.ValueList.$Type": "Common.ValueListType",
+          "@Common.ValueList.CollectionPath": "Employees",
+          "@Common.ValueList.Parameters": [
+            {
+              "$Type": "Common.ValueListParameterInOut",
+              "LocalDataProperty": {
+                "=": "employee_ID"
+              },
+              "ValueListProperty": "ID"
+            },
+            {
+              "$Type": "Common.ValueListParameterDisplayOnly",
+              "ValueListProperty": "empName"
+            },
+            {
+              "$Type": "Common.ValueListParameterDisplayOnly",
+              "ValueListProperty": "email"
+            },
+            {
+              "$Type": "Common.ValueListParameterDisplayOnly",
+              "ValueListProperty": "department"
+            }
+          ],
+          "type": "cds.Association",
+          "target": "Travel_Expense_Service.Employees",
+          "keys": [
+            {
+              "ref": [
+                "ID"
+              ]
+            }
+          ]
+        },
+        "department": {
+          "type": "cds.Association",
+          "target": "Travel_Expense_Service.Department",
+          "keys": [
+            {
+              "ref": [
+                "ID"
+              ]
+            }
+          ]
+        },
+        "clientName": {
+          "type": "cds.String"
+        },
+        "travelPurpose": {
+          "type": "cds.String"
+        },
+        "travelType": {
+          "@Common.ValueList.$Type": "Common.ValueListType",
+          "@Common.ValueList.CollectionPath": "TravelType",
+          "@Common.ValueList.Parameters": [
+            {
+              "$Type": "Common.ValueListParameterInOut",
+              "LocalDataProperty": {
+                "=": "travelType_name"
+              },
+              "ValueListProperty": "name"
+            }
+          ],
+          "type": "cds.Association",
+          "target": "Travel_Expense_Service.TravelType",
+          "keys": [
+            {
+              "ref": [
+                "name"
+              ]
+            }
+          ]
+        },
+        "vendor": {
+          "type": "cds.Association",
+          "target": "travel_expense_management_system.Vendor",
+          "keys": [
+            {
+              "ref": [
+                "ID"
+              ]
+            }
+          ]
+        },
+        "status": {
+          "type": "cds.String",
+          "default": {
+            "val": "Pending Manager Approval"
+          }
+        },
+        "fromLocation": {
+          "type": "cds.String"
+        },
+        "toLocation": {
+          "type": "cds.String"
+        },
+        "startDate": {
+          "type": "cds.Date"
+        },
+        "endDate": {
+          "type": "cds.Date"
+        },
+        "estimatedCost": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "requestedOn": {
+          "type": "cds.Date",
+          "default": {
+            "func": "CURRENT_DATE"
+          }
+        },
+        "approvedOn": {
+          "type": "cds.Date"
+        },
+        "advanceRequired": {
+          "type": "cds.Boolean",
+          "default": {
+            "val": false
+          }
+        },
+        "requestedAdvanceAmount": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2,
+          "default": {
+            "val": 0
+          }
+        },
+        "approvedAdvanceAmount": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2,
+          "default": {
+            "val": 0
+          }
+        },
+        "managerapprovedOn": {
+          "type": "cds.Date"
+        },
+        "financeapprovedOn": {
+          "type": "cds.Date"
+        },
+        "finalReimbursedAmount": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2,
+          "default": {
+            "val": 0
+          }
+        },
+        "tripStatus": {
+          "type": "cds.String"
+        },
+        "expenseIncurred": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2,
+          "default": {
+            "val": 0
+          }
+        },
+        "expenseClaim": {
+          "type": "cds.Composition",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "Travel_Expense_Service.ExpenseClaims",
+          "on": [
+            {
+              "ref": [
+                "expenseClaim",
+                "travelRequest"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "$self"
+              ]
+            }
+          ]
+        }
+      },
+      "actions": {
+        "advanceapprove": {
+          "kind": "action"
+        },
+        "advancereject": {
+          "kind": "action"
+        }
+      }
+    },
+    "Travel_Expense_Service.FinanceExpenseApproval": {
+      "kind": "entity",
+      "@UI.FieldGroup#GeneratedGroup.$Type": "UI.FieldGroupType",
+      "@UI.FieldGroup#GeneratedGroup.Data": [
+        {
+          "$Type": "UI.DataField",
+          "Label": "travelPurpose",
+          "Value": {
+            "=": "travelPurpose"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "travelType_name",
+          "Value": {
+            "=": "travelType_name"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "status",
+          "Value": {
+            "=": "status"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "fromLocation",
+          "Value": {
+            "=": "fromLocation"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "toLocation",
+          "Value": {
+            "=": "toLocation"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "startDate",
+          "Value": {
+            "=": "startDate"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "endDate",
+          "Value": {
+            "=": "endDate"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "estimatedCost",
+          "Value": {
+            "=": "estimatedCost"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "requestedOn",
+          "Value": {
+            "=": "requestedOn"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "managerapprovedOn"
+          },
+          "Label": "managerapprovedOn"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "advanceRequired",
+          "Value": {
+            "=": "advanceRequired"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "requestedAdvanceAmount",
+          "Value": {
+            "=": "requestedAdvanceAmount"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "financeapprovedOn",
+          "Value": {
+            "=": "financeapprovedOn"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "approvedAdvanceAmount",
+          "Value": {
+            "=": "approvedAdvanceAmount"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "finalReimbursedAmount",
+          "Value": {
+            "=": "finalReimbursedAmount"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "tripStatus",
+          "Value": {
+            "=": "tripStatus"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "expenseIncurred",
+          "Value": {
+            "=": "expenseIncurred"
+          }
+        }
+      ],
+      "@UI.Facets": [
+        {
+          "$Type": "UI.ReferenceFacet",
+          "ID": "GeneratedFacet1",
+          "Label": "General Information",
+          "Target": "@UI.FieldGroup#GeneratedGroup"
+        },
+        {
+          "$Type": "UI.ReferenceFacet",
+          "Label": "Expense Claims",
+          "ID": "ExpenseClaims",
+          "Target": "expenseClaim/@UI.LineItem#ExpenseClaims1"
+        }
+      ],
+      "@UI.LineItem": [
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "employee.empName"
+          },
+          "Label": "empName"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "travelPurpose",
+          "Value": {
+            "=": "travelPurpose"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "travelType_name",
+          "Value": {
+            "=": "travelType_name"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "status",
+          "Value": {
+            "=": "status"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "advanceRequired"
+          },
+          "Label": "advanceRequired"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "approvedAdvanceAmount"
+          },
+          "Label": "approvedAdvanceAmount"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "estimatedCost"
+          },
+          "Label": "estimatedCost"
+        }
+      ],
+      "@UI.HeaderInfo.Title.$Type": "UI.DataField",
+      "@UI.HeaderInfo.Title.Value": {
+        "=": "employee.empName"
+      },
+      "@UI.HeaderInfo.TypeName": "",
+      "@UI.HeaderInfo.TypeNamePlural": "",
+      "@UI.HeaderInfo.Description.$Type": "UI.DataField",
+      "@UI.HeaderInfo.Description.Value": {
+        "=": "employee.role"
+      },
+      "projection": {
+        "from": {
+          "ref": [
+            "travel_expense_management_system.TravelRequests"
+          ]
+        },
+        "columns": [
+          "*"
+        ]
+      },
+      "elements": {
+        "ID": {
+          "@Core.Computed": true,
+          "key": true,
+          "type": "cds.UUID"
+        },
+        "employee": {
+          "@Common.ValueList.$Type": "Common.ValueListType",
+          "@Common.ValueList.CollectionPath": "Employees",
+          "@Common.ValueList.Parameters": [
+            {
+              "$Type": "Common.ValueListParameterInOut",
+              "LocalDataProperty": {
+                "=": "employee_ID"
+              },
+              "ValueListProperty": "ID"
+            },
+            {
+              "$Type": "Common.ValueListParameterDisplayOnly",
+              "ValueListProperty": "empName"
+            },
+            {
+              "$Type": "Common.ValueListParameterDisplayOnly",
+              "ValueListProperty": "email"
+            },
+            {
+              "$Type": "Common.ValueListParameterDisplayOnly",
+              "ValueListProperty": "role"
+            },
+            {
+              "$Type": "Common.ValueListParameterDisplayOnly",
+              "ValueListProperty": "location_name"
+            }
+          ],
+          "type": "cds.Association",
+          "target": "Travel_Expense_Service.Employees",
+          "keys": [
+            {
+              "ref": [
+                "ID"
+              ]
+            }
+          ]
+        },
+        "department": {
+          "@Common.ValueList.$Type": "Common.ValueListType",
+          "@Common.ValueList.CollectionPath": "Department",
+          "@Common.ValueList.Parameters": [
+            {
+              "$Type": "Common.ValueListParameterInOut",
+              "LocalDataProperty": {
+                "=": "department_ID"
+              },
+              "ValueListProperty": "ID"
+            },
+            {
+              "$Type": "Common.ValueListParameterDisplayOnly",
+              "ValueListProperty": "name"
+            },
+            {
+              "$Type": "Common.ValueListParameterDisplayOnly",
+              "ValueListProperty": "totalBudget"
+            },
+            {
+              "$Type": "Common.ValueListParameterDisplayOnly",
+              "ValueListProperty": "usedBudget"
+            },
+            {
+              "$Type": "Common.ValueListParameterDisplayOnly",
+              "ValueListProperty": "remainingBudget"
+            }
+          ],
+          "type": "cds.Association",
+          "target": "Travel_Expense_Service.Department",
+          "keys": [
+            {
+              "ref": [
+                "ID"
+              ]
+            }
+          ]
+        },
+        "clientName": {
+          "type": "cds.String"
+        },
+        "travelPurpose": {
+          "type": "cds.String"
+        },
+        "travelType": {
+          "@Common.ValueList.$Type": "Common.ValueListType",
+          "@Common.ValueList.CollectionPath": "TravelType",
+          "@Common.ValueList.Parameters": [
+            {
+              "$Type": "Common.ValueListParameterInOut",
+              "LocalDataProperty": {
+                "=": "travelType_name"
+              },
+              "ValueListProperty": "name"
+            }
+          ],
+          "type": "cds.Association",
+          "target": "Travel_Expense_Service.TravelType",
+          "keys": [
+            {
+              "ref": [
+                "name"
+              ]
+            }
+          ]
+        },
+        "vendor": {
+          "type": "cds.Association",
+          "target": "travel_expense_management_system.Vendor",
+          "keys": [
+            {
+              "ref": [
+                "ID"
+              ]
+            }
+          ]
+        },
+        "status": {
+          "type": "cds.String",
+          "default": {
+            "val": "Pending Manager Approval"
+          }
+        },
+        "fromLocation": {
+          "type": "cds.String"
+        },
+        "toLocation": {
+          "type": "cds.String"
+        },
+        "startDate": {
+          "type": "cds.Date"
+        },
+        "endDate": {
+          "type": "cds.Date"
+        },
+        "estimatedCost": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "requestedOn": {
+          "type": "cds.Date",
+          "default": {
+            "func": "CURRENT_DATE"
+          }
+        },
+        "approvedOn": {
+          "type": "cds.Date"
+        },
+        "advanceRequired": {
+          "type": "cds.Boolean",
+          "default": {
+            "val": false
+          }
+        },
+        "requestedAdvanceAmount": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2,
+          "default": {
+            "val": 0
+          }
+        },
+        "approvedAdvanceAmount": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2,
+          "default": {
+            "val": 0
+          }
+        },
+        "managerapprovedOn": {
+          "type": "cds.Date"
+        },
+        "financeapprovedOn": {
+          "type": "cds.Date"
+        },
+        "finalReimbursedAmount": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2,
+          "default": {
+            "val": 0
+          }
+        },
+        "tripStatus": {
+          "type": "cds.String"
+        },
+        "expenseIncurred": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2,
+          "default": {
+            "val": 0
+          }
+        },
+        "expenseClaim": {
+          "type": "cds.Composition",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "Travel_Expense_Service.ExpenseClaims",
+          "on": [
+            {
+              "ref": [
+                "expenseClaim",
+                "travelRequest"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "$self"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "Travel_Expense_Service.AdvancePolicies": {
+      "kind": "entity",
+      "@odata.draft.enabled": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "travel_expense_management_system.AdvancePolicies"
+          ]
+        }
+      },
+      "elements": {
+        "ID": {
+          "@Core.Computed": true,
+          "key": true,
+          "type": "cds.UUID"
+        },
+        "policyName": {
+          "type": "cds.String"
+        },
+        "minAmount": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "maxAmount": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "approvalPercent": {
+          "type": "cds.Decimal",
+          "precision": 5,
+          "scale": 2
+        },
+        "action": {
+          "type": "cds.String"
+        },
+        "description": {
+          "type": "cds.String"
+        }
+      }
+    },
+    "Travel_Expense_Service.ExpenseClaims": {
+      "kind": "entity",
+      "@UI.FieldGroup#GeneratedGroup.$Type": "UI.FieldGroupType",
+      "@UI.FieldGroup#GeneratedGroup.Data": [
+        {
+          "$Type": "UI.DataField",
+          "Label": "claimDate",
+          "Value": {
+            "=": "claimDate"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "tripCompletedDate",
+          "Value": {
+            "=": "tripCompletedDate"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "totalClaimedAmount",
+          "Value": {
+            "=": "totalClaimedAmount"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "status",
+          "Value": {
+            "=": "status"
+          }
+        }
+      ],
+      "@UI.Facets": [
+        {
+          "$Type": "UI.ReferenceFacet",
+          "ID": "GeneratedFacet1",
+          "Label": "General Information",
+          "Target": "@UI.FieldGroup#GeneratedGroup"
+        }
+      ],
+      "@UI.LineItem": [
+        {
+          "$Type": "UI.DataField",
+          "Label": "claimDate",
+          "Value": {
+            "=": "claimDate"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "tripCompletedDate",
+          "Value": {
+            "=": "tripCompletedDate"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "totalClaimedAmount",
+          "Value": {
+            "=": "totalClaimedAmount"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "status",
+          "Value": {
+            "=": "status"
+          }
+        }
+      ],
+      "@UI.LineItem#ExpenseClaim": [
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "ID"
+          },
+          "Label": "Expense Claim Id"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "travelRequest.employee.empName"
+          },
+          "Label": "Employee"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "expenseDate"
+          },
+          "Label": "Expense Date"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "expenseType_name"
+          },
+          "Label": "Expense Type"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "travelRequest.travelType_name"
+          },
+          "Label": "Travel Type"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "description"
+          },
+          "Label": "Description"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "claimStatus"
+          },
+          "Label": "Claim Status"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "requestedAmount"
+          },
+          "Label": "Requested Amount"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "approvedAmount"
+          },
+          "Label": "Approved Amount"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "attachment"
+          },
+          "Label": "Attachment"
+        },
+        {
+          "$Type": "UI.DataFieldForAction",
+          "Action": "Travel_Expense_Service.rejectExpense",
+          "Label": "Reject Expense"
+        },
+        {
+          "$Type": "UI.DataFieldForAction",
+          "Action": "Travel_Expense_Service.approveExpense",
+          "Label": "Approve Expense"
+        }
+      ],
+      "@UI.LineItem#ExpenseClaims1": [
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "ID"
+          },
+          "Label": "ID"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "expenseDate"
+          },
+          "Label": "Expense Date"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "travelRequest.travelType_name"
+          },
+          "Label": "Travel Type "
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "expenseType_name"
+          },
+          "Label": "Expense Type"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "description"
+          },
+          "Label": "Description"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "claimStatus"
+          },
+          "Label": "Claim Status"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "attachment"
+          },
+          "Label": "Attachment"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "requestedAmount"
+          },
+          "Label": "Requested Amount"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "approvedAmount"
+          },
+          "Label": "Approved Amount"
+        },
+        {
+          "$Type": "UI.DataFieldForAction",
+          "Action": "Travel_Expense_Service.approveExpense",
+          "Label": "Approve Expense"
+        },
+        {
+          "$Type": "UI.DataFieldForAction",
+          "Action": "Travel_Expense_Service.rejectExpense",
+          "Label": "Reject Expense"
+        }
+      ],
+      "@UI.LineItem#ExpenseClaims": [
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "ID"
+          },
+          "Label": "ID"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "expenseDate"
+          },
+          "Label": "Expense Date"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "expenseType_name"
+          },
+          "Label": "Expense Type"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "travelRequest.travelType_name"
+          },
+          "Label": "Travel Type"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "description"
+          },
+          "Label": "Description"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "claimStatus"
+          },
+          "Label": "Claim Status"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "attachment"
+          },
+          "Label": "Attachment"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "requestedAmount"
+          },
+          "Label": "Requested Amount"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "approvedAmount"
+          },
+          "Label": "Approved Amount"
+        }
+      ],
+      "projection": {
+        "from": {
+          "ref": [
+            "travel_expense_management_system.ExpenseClaims"
+          ]
+        }
+      },
+      "elements": {
+        "ID": {
+          "@Core.Computed": true,
+          "key": true,
+          "type": "cds.UUID"
+        },
+        "travelRequest": {
+          "@Common.ValueList.$Type": "Common.ValueListType",
+          "@Common.ValueList.CollectionPath": "TravelRequests",
+          "@Common.ValueList.Parameters": [
+            {
+              "$Type": "Common.ValueListParameterInOut",
+              "LocalDataProperty": {
+                "=": "travelRequest_ID"
+              },
+              "ValueListProperty": "ID"
+            },
+            {
+              "$Type": "Common.ValueListParameterDisplayOnly",
+              "ValueListProperty": "travelPurpose"
+            },
+            {
+              "$Type": "Common.ValueListParameterDisplayOnly",
+              "ValueListProperty": "travelType"
+            },
+            {
+              "$Type": "Common.ValueListParameterDisplayOnly",
+              "ValueListProperty": "status"
+            },
+            {
+              "$Type": "Common.ValueListParameterDisplayOnly",
+              "ValueListProperty": "fromLocation"
+            }
+          ],
+          "type": "cds.Association",
+          "target": "Travel_Expense_Service.TravelRequests",
+          "keys": [
+            {
+              "ref": [
+                "ID"
+              ]
+            }
+          ]
+        },
+        "expenseType": {
+          "@Common.ValueList.$Type": "Common.ValueListType",
+          "@Common.ValueList.CollectionPath": "ExpenseType",
+          "@Common.ValueList.Parameters": [
+            {
+              "$Type": "Common.ValueListParameterInOut",
+              "LocalDataProperty": {
+                "=": "expenseType_name"
+              },
+              "ValueListProperty": "name"
+            }
+          ],
+          "@Common.ValueList.Label": "Expense Type",
+          "@Common.ValueListWithFixedValues": true,
+          "type": "cds.Association",
+          "target": "Travel_Expense_Service.ExpenseType",
+          "keys": [
+            {
+              "ref": [
+                "name"
+              ]
+            }
+          ]
+        },
+        "expenseDate": {
+          "type": "cds.Date"
+        },
+        "requestedAmount": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "approvedAmount": {
+          "@Common.FieldControl": {
+            "#": "ReadOnly"
+          },
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "description": {
+          "type": "cds.String"
+        },
+        "attachment": {
+          "type": "cds.String"
+        },
+        "claimStatus": {
+          "@Common.FieldControl": {
+            "#": "ReadOnly"
+          },
+          "type": "cds.String",
+          "default": {
+            "val": "Pending"
+          }
+        }
+      },
+      "actions": {
+        "approveExpense": {
+          "kind": "action"
+        },
+        "rejectExpense": {
+          "kind": "action"
+        }
+      }
+    },
+    "Travel_Expense_Service.Department": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "travel_expense_management_system.Department"
+          ]
+        }
+      },
+      "elements": {
+        "ID": {
+          "@Core.Computed": true,
+          "key": true,
+          "type": "cds.UUID"
+        },
+        "name": {
+          "type": "cds.String"
+        },
+        "totalBudget": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "usedBudget": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "remainingBudget": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        }
+      }
+    },
+    "Travel_Expense_Service.ExpenseType": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "travel_expense_management_system.ExpenseType"
+          ]
+        }
+      },
+      "elements": {
+        "name": {
+          "key": true,
+          "type": "cds.String"
+        }
+      }
+    },
+    "Travel_Expense_Service.Location": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "travel_expense_management_system.Location"
+          ]
+        }
+      },
+      "elements": {
+        "ID": {
+          "@Core.Computed": true,
+          "key": true,
+          "type": "cds.UUID"
+        },
+        "name": {
+          "type": "cds.String"
+        }
+      }
+    },
+    "Travel_Expense_Service.TravelType": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "travel_expense_management_system.TravelType"
+          ]
+        }
+      },
+      "elements": {
+        "name": {
+          "key": true,
+          "type": "cds.String"
+        }
+      }
+    },
+    "cds.outbox.Messages": {
+      "kind": "entity",
+      "elements": {
+        "ID": {
+          "key": true,
+          "type": "cds.UUID"
+        },
+        "timestamp": {
+          "type": "cds.Timestamp"
+        },
+        "target": {
+          "type": "cds.String"
+        },
+        "msg": {
+          "type": "cds.LargeString"
+        },
+        "attempts": {
+          "type": "cds.Integer",
+          "default": {
+            "val": 0
+          }
+        },
+        "partition": {
+          "type": "cds.Integer",
+          "default": {
+            "val": 0
+          }
+        },
+        "lastError": {
+          "type": "cds.LargeString"
+        },
+        "lastAttemptTimestamp": {
+          "type": "cds.Timestamp"
+        },
+        "status": {
+          "type": "cds.String",
+          "length": 23
+        },
+        "task": {
+          "type": "cds.String",
+          "length": 255
+        },
+        "appid": {
+          "type": "cds.String",
+          "length": 255
+        }
+      }
+    }
+  },
+  "extensions": [
+    {
+      "annotate": "Travel_Expense_Service.ExpenseClaims",
+      "elements": {
+        "employee": {
+          "@Common.ValueList.$Type": "Common.ValueListType",
+          "@Common.ValueList.CollectionPath": "Employees",
+          "@Common.ValueList.Parameters": [
+            {
+              "$Type": "Common.ValueListParameterInOut",
+              "LocalDataProperty": {
+                "=": "employee_ID"
+              },
+              "ValueListProperty": "ID"
+            },
+            {
+              "$Type": "Common.ValueListParameterDisplayOnly",
+              "ValueListProperty": "empName"
+            },
+            {
+              "$Type": "Common.ValueListParameterDisplayOnly",
+              "ValueListProperty": "email"
+            },
+            {
+              "$Type": "Common.ValueListParameterDisplayOnly",
+              "ValueListProperty": "department"
+            },
+            {
+              "$Type": "Common.ValueListParameterDisplayOnly",
+              "ValueListProperty": "designation"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "meta": {
+    "creator": "CDS Compiler v6.9.0",
+    "compilerVersion": "6.9.0",
+    "compilerCsnFlavor": "inferred",
+    "flavor": "inferred"
+  },
+  "$version": "2.0"
+}

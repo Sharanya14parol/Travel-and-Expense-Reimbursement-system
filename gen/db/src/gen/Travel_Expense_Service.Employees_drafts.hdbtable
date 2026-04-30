@@ -1,0 +1,14 @@
+COLUMN TABLE Travel_Expense_Service_Employees_drafts (
+  ID NVARCHAR(36) NOT NULL,
+  empName NVARCHAR(5000) NULL,
+  email NVARCHAR(5000) NULL,
+  department_ID NVARCHAR(36) NULL,
+  manager_ID NVARCHAR(36) NULL,
+  role NVARCHAR(5000) NULL,
+  location_ID NVARCHAR(36) NULL,
+  IsActiveEntity BOOLEAN,
+  HasActiveEntity BOOLEAN,
+  HasDraftEntity BOOLEAN,
+  DraftAdministrativeData_DraftUUID NVARCHAR(36) NOT NULL,
+  PRIMARY KEY(ID)
+)

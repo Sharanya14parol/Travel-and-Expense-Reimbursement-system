@@ -1,0 +1,8 @@
+COLUMN TABLE travel_expense_management_system_Department (
+  ID NVARCHAR(36) NOT NULL,
+  name NVARCHAR(5000),
+  totalBudget DECIMAL(15, 2),
+  usedBudget DECIMAL(15, 2),
+  remainingBudget DECIMAL(15, 2),
+  PRIMARY KEY(ID)
+)

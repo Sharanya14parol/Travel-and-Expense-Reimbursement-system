@@ -1,0 +1,6 @@
+ID,travelRequest_ID,expenseType_name,expenseDate,requestedAmount,approvedAmount,description,attachment,claimStatus
+aaa11111-1111-1111-1111-111111111199,00011111-1111-1111-1111-111111111111,Hotel,2026-04-07,45000.00,0.00,Hotel stay during client visit,hotel_bill_1.pdf,Pending
+bbb22222-2222-2222-2222-222222222299,00022222-2222-2222-2222-222222222222,Food,2026-04-11,980.00,0.00,Meals during travel,food_bill_1.pdf,Pending
+ccc33333-3333-3333-3333-333333333399,00033333-3333-3333-3333-333333333333,Travel,2026-04-18,7850.00,0.00,Flight booking reimbursement,flight_ticket_1.pdf,Approved
+ddd44444-4444-4444-4444-444444444499,00044444-4444-4444-4444-444444444444,Food,2026-04-23,1200.00,0.00,Airport to hotel cab fare,taxi_receipt_1.pdf,Rejected
+eee55555-5555-5555-5555-555555555599,00055555-5555-5555-5555-555555555555,Travel,2026-04-27,3000.00,0.00,Conference registration payment,conference_fee_1.pdf,Approved

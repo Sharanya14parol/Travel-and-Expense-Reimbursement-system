@@ -1,0 +1,37 @@
+{
+  "format_version": 1,
+  "imports": [
+    {
+      "target_table": "TRAVEL_EXPENSE_MANAGEMENT_SYSTEM_ADVANCEPOLICIES",
+      "source_data": {
+        "data_type": "CSV",
+        "file_name": "travel_expense_management_system-AdvancePolicies.csv",
+        "has_header": true,
+        "type_config": {
+          "delimiter": ","
+        }
+      },
+      "import_settings": {
+        "import_columns": [
+          "ID",
+          "POLICYNAME",
+          "MINAMOUNT",
+          "MAXAMOUNT",
+          "APPROVALPERCENT",
+          "ACTION",
+          "DESCRIPTION"
+        ],
+        "include_filter": []
+      },
+      "column_mappings": {
+        "ID": "ID",
+        "POLICYNAME": "policyName",
+        "MINAMOUNT": "minAmount",
+        "MAXAMOUNT": "maxAmount",
+        "APPROVALPERCENT": "approvalPercent",
+        "ACTION": "action",
+        "DESCRIPTION": "description"
+      }
+    }
+  ]
+}

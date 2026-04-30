@@ -1,0 +1,4 @@
+VIEW Travel_Expense_Service_Location AS SELECT
+  Location_0.ID,
+  Location_0.name
+FROM travel_expense_management_system_Location AS Location_0

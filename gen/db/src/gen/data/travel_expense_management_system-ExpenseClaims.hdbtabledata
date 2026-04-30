@@ -1,0 +1,41 @@
+{
+  "format_version": 1,
+  "imports": [
+    {
+      "target_table": "TRAVEL_EXPENSE_MANAGEMENT_SYSTEM_EXPENSECLAIMS",
+      "source_data": {
+        "data_type": "CSV",
+        "file_name": "travel_expense_management_system-ExpenseClaims.csv",
+        "has_header": true,
+        "type_config": {
+          "delimiter": ","
+        }
+      },
+      "import_settings": {
+        "import_columns": [
+          "ID",
+          "TRAVELREQUEST_ID",
+          "EXPENSETYPE_NAME",
+          "EXPENSEDATE",
+          "REQUESTEDAMOUNT",
+          "APPROVEDAMOUNT",
+          "DESCRIPTION",
+          "ATTACHMENT",
+          "CLAIMSTATUS"
+        ],
+        "include_filter": []
+      },
+      "column_mappings": {
+        "ID": "ID",
+        "TRAVELREQUEST_ID": "travelRequest_ID",
+        "EXPENSETYPE_NAME": "expenseType_name",
+        "EXPENSEDATE": "expenseDate",
+        "REQUESTEDAMOUNT": "requestedAmount",
+        "APPROVEDAMOUNT": "approvedAmount",
+        "DESCRIPTION": "description",
+        "ATTACHMENT": "attachment",
+        "CLAIMSTATUS": "claimStatus"
+      }
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+COLUMN TABLE travel_expense_management_system_AdvancePolicies (
+  ID NVARCHAR(36) NOT NULL,
+  policyName NVARCHAR(5000),
+  minAmount DECIMAL(15, 2),
+  maxAmount DECIMAL(15, 2),
+  approvalPercent DECIMAL(5, 2),
+  action NVARCHAR(5000),
+  description NVARCHAR(5000),
+  PRIMARY KEY(ID)
+)

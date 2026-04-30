@@ -1,0 +1,4 @@
+ID,policyName,minAmount,maxAmount,approvalPercent,action,description
+11111111-1111-1111-1111-111111111111,Low Advance Rule,0.00,10000.00,25.00,Approve,Approve 25 percent for requested advance amounts up to 10000
+22222222-2222-2222-2222-222222222222,Medium Advance Rule,10000.01,49999.99,45.00,Approve,Approve 45 percent for requested advance amounts greater than 10000 and less than 50000
+33333333-3333-3333-3333-333333333333,High Advance Restriction Rule,50000.00,999999.99,0.00,Reject,Reject advance requests for amounts 50000 and above

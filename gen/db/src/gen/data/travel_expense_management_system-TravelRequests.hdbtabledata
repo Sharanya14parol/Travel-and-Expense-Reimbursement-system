@@ -1,0 +1,69 @@
+{
+  "format_version": 1,
+  "imports": [
+    {
+      "target_table": "TRAVEL_EXPENSE_MANAGEMENT_SYSTEM_TRAVELREQUESTS",
+      "source_data": {
+        "data_type": "CSV",
+        "file_name": "travel_expense_management_system-TravelRequests.csv",
+        "has_header": true,
+        "type_config": {
+          "delimiter": ","
+        }
+      },
+      "import_settings": {
+        "import_columns": [
+          "ID",
+          "EMPLOYEE_ID",
+          "DEPARTMENT_ID",
+          "CLIENTNAME",
+          "TRAVELPURPOSE",
+          "TRAVELTYPE_NAME",
+          "VENDOR_ID",
+          "STATUS",
+          "FROMLOCATION",
+          "TOLOCATION",
+          "STARTDATE",
+          "ENDDATE",
+          "ESTIMATEDCOST",
+          "REQUESTEDON",
+          "APPROVEDON",
+          "ADVANCEREQUIRED",
+          "REQUESTEDADVANCEAMOUNT",
+          "APPROVEDADVANCEAMOUNT",
+          "MANAGERAPPROVEDON",
+          "FINANCEAPPROVEDON",
+          "FINALREIMBURSEDAMOUNT",
+          "TRIPSTATUS",
+          "EXPENSEINCURRED"
+        ],
+        "include_filter": []
+      },
+      "column_mappings": {
+        "ID": "ID",
+        "EMPLOYEE_ID": "employee_ID",
+        "DEPARTMENT_ID": "department_ID",
+        "CLIENTNAME": "clientName",
+        "TRAVELPURPOSE": "travelPurpose",
+        "TRAVELTYPE_NAME": "travelType_name",
+        "VENDOR_ID": "vendor_ID",
+        "STATUS": "status",
+        "FROMLOCATION": "fromLocation",
+        "TOLOCATION": "toLocation",
+        "STARTDATE": "startDate",
+        "ENDDATE": "endDate",
+        "ESTIMATEDCOST": "estimatedCost",
+        "REQUESTEDON": "requestedOn",
+        "APPROVEDON": "approvedOn",
+        "ADVANCEREQUIRED": "advanceRequired",
+        "REQUESTEDADVANCEAMOUNT": "requestedAdvanceAmount",
+        "APPROVEDADVANCEAMOUNT": "approvedAdvanceAmount",
+        "MANAGERAPPROVEDON": "managerapprovedOn",
+        "FINANCEAPPROVEDON": "financeapprovedOn",
+        "FINALREIMBURSEDAMOUNT": "finalReimbursedAmount",
+        "TRIPSTATUS": "tripStatus",
+        "EXPENSEINCURRED": "expenseIncurred"
+      }
+    }
+  ]
+}

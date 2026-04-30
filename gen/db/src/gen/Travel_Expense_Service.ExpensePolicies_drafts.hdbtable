@@ -1,0 +1,14 @@
+COLUMN TABLE Travel_Expense_Service_ExpensePolicies_drafts (
+  ID NVARCHAR(36) NOT NULL,
+  policyName NVARCHAR(5000) NULL,
+  travelType_name NVARCHAR(5000) NULL,
+  expenseCategory_ID NVARCHAR(36) NULL,
+  maxAllowedAmount DECIMAL(15, 2) NULL,
+  receiptRequired BOOLEAN NULL DEFAULT TRUE,
+  description NVARCHAR(5000) NULL,
+  IsActiveEntity BOOLEAN,
+  HasActiveEntity BOOLEAN,
+  HasDraftEntity BOOLEAN,
+  DraftAdministrativeData_DraftUUID NVARCHAR(36) NOT NULL,
+  PRIMARY KEY(ID)
+)

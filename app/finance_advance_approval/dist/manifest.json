@@ -1,0 +1,200 @@
+{
+	"_version": "1.81.0",
+	"sap.app": {
+		"id": "financeadvanceapproval",
+		"type": "application",
+		"i18n": {
+			"bundleUrl": "i18n/i18n.properties",
+			"supportedLocales": [
+				""
+			]
+		},
+		"applicationVersion": {
+			"version": "0.0.1"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"resources": "resources.json",
+		"sourceTemplate": {
+			"id": "@sap/generator-fiori:lrop",
+			"version": "1.20.2",
+			"toolsId": "67a3913b-9a5c-46bc-a946-ca689fec8723"
+		},
+		"dataSources": {
+			"mainService": {
+				"uri": "/odata/v4/travel-expense-/",
+				"type": "OData",
+				"settings": {
+					"annotations": [],
+					"odataVersion": "4.0"
+				}
+			}
+		},
+		"crossNavigation": {
+			"inbounds": {
+				"travel_requests-display": {
+					"semanticObject": "travel_requests",
+					"action": "display",
+					"signature": {
+						"parameters": {},
+						"additionalParameters": "allowed"
+					}
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"flexEnabled": true,
+		"dependencies": {
+			"minUI5Version": "1.146.0",
+			"libs": {
+				"sap.m": {},
+				"sap.ui.core": {},
+				"sap.fe.templates": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "financeadvanceapproval.i18n.i18n",
+					"supportedLocales": [
+						""
+					]
+				}
+			},
+			"": {
+				"dataSource": "mainService",
+				"preload": true,
+				"settings": {
+					"operationMode": "Server",
+					"autoExpandSelect": true,
+					"earlyRequests": true
+				}
+			},
+			"@i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties",
+				"settings": {
+					"supportedLocales": [
+						""
+					]
+				}
+			}
+		},
+		"resources": {
+			"css": []
+		},
+		"routing": {
+			"config": {},
+			"routes": [
+				{
+					"pattern": ":?query:",
+					"name": "FinanceAdvanceApprovalList",
+					"target": "FinanceAdvanceApprovalList"
+				},
+				{
+					"pattern": "FinanceAdvanceApproval({key}):?query:",
+					"name": "FinanceAdvanceApprovalObjectPage",
+					"target": "FinanceAdvanceApprovalObjectPage"
+				},
+				{
+					"name": "FinanceAdvanceApproval_expenseClaimObjectPage",
+					"pattern": "FinanceAdvanceApproval({key})/expenseClaim({expenseClaimKey}):?query:",
+					"target": "FinanceAdvanceApproval_expenseClaimObjectPage"
+				}
+			],
+			"targets": {
+				"FinanceAdvanceApprovalList": {
+					"type": "Component",
+					"id": "FinanceAdvanceApprovalList",
+					"name": "sap.fe.templates.ListReport",
+					"options": {
+						"settings": {
+							"contextPath": "/FinanceAdvanceApproval",
+							"variantManagement": "Page",
+							"navigation": {
+								"FinanceAdvanceApproval": {
+									"detail": {
+										"route": "FinanceAdvanceApprovalObjectPage"
+									}
+								}
+							},
+							"controlConfiguration": {
+								"@com.sap.vocabularies.UI.v1.LineItem": {
+									"tableSettings": {
+										"type": "ResponsiveTable"
+									}
+								}
+							}
+						}
+					}
+				},
+				"FinanceAdvanceApprovalObjectPage": {
+					"type": "Component",
+					"id": "FinanceAdvanceApprovalObjectPage",
+					"name": "sap.fe.templates.ObjectPage",
+					"options": {
+						"settings": {
+							"editableHeaderContent": false,
+							"contextPath": "/FinanceAdvanceApproval",
+							"sectionLayout": "Tabs",
+							"navigation": {
+								"expenseClaim": {
+									"detail": {
+										"route": "FinanceAdvanceApproval_expenseClaimObjectPage"
+									}
+								}
+							}
+						}
+					}
+				},
+				"FinanceAdvanceApproval_expenseClaimObjectPage": {
+					"type": "Component",
+					"id": "FinanceAdvanceApproval_expenseClaimObjectPage",
+					"name": "sap.fe.templates.ObjectPage",
+					"options": {
+						"settings": {
+							"navigation": {},
+							"contextPath": "/FinanceAdvanceApproval/expenseClaim"
+						}
+					}
+				}
+			}
+		},
+		"flexBundle": false
+	},
+	"sap.fiori": {
+		"registrationIds": [],
+		"archeType": "transactional"
+	},
+	"sap.fe": {
+		"app": {
+			"enableLazyLoading": true
+		}
+	},
+	"sap.cloud": {
+		"public": true,
+		"service": "travel_expense_app.service"
+	}
+}

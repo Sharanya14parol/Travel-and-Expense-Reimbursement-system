@@ -1,0 +1,3 @@
+VIEW Travel_Expense_Service_ExpenseType AS SELECT
+  ExpenseType_0.name
+FROM travel_expense_management_system_ExpenseType AS ExpenseType_0

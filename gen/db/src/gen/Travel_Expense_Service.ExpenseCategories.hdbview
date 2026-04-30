@@ -1,0 +1,6 @@
+VIEW Travel_Expense_Service_ExpenseCategories AS SELECT
+  ExpenseCategories_0.ID,
+  ExpenseCategories_0.category,
+  ExpenseCategories_0.description,
+  ExpenseCategories_0.receiptRequired
+FROM travel_expense_management_system_ExpenseCategories AS ExpenseCategories_0
