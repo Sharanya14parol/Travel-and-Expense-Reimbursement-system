@@ -1,0 +1,646 @@
+#2026 05 08 08:55:39.227#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:03.258541] Starting app with guid 12d88eeb-f83c-4f84-aa2c-a59761ea2448 (STDOUT, API)#
+#2026 05 08 08:55:39.227#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:03.466059] Cell 77283d80-dfa7-40ba-ba4e-265aef112085 creating container for instance 2c5ff50b-26e5-46c0-7f5b-0909 (STDOUT, CELL)#
+#2026 05 08 08:55:39.227#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:03.826132] Security group rules were updated (STDOUT, CELL)#
+#2026 05 08 08:55:39.227#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:03.893978] Cell 77283d80-dfa7-40ba-ba4e-265aef112085 successfully created container for instance 2c5ff50b-26e5-46c0-7f5b-0909 (STDOUT, CELL)#
+#2026 05 08 08:55:39.227#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:04.229333] Downloading droplet... (STDOUT, CELL)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:07.560831] Downloaded droplet (58.4M) (STDOUT, CELL)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:07.561001] Starting health monitoring of container (STDOUT, CELL)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:07.620494] Invoking pre-start scripts. (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:07.761456] Invoking start command. (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:08.062369] > start (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:08.062398] > node node_modules/@sap/hdi-deploy/deploy.js --use-hdb --parameter com.sap.hana.di.table/try_fast_table_migration=true (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:08.162389] VCAP_SERVICES: (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:08.162607] { (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:08.162621] "hana": [ (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:08.162626] { (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:08.162630] "name": "travel_expense_app-db", (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:08.162634] "label": "hana", (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:08.162660] "plan": "hdi-shared", (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:08.162663] "credentials": { (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:08.162668] "schema": "C0414F69880D4C26ACA53E36AB359962", (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:08.162671] "database_id": "101f8dce-9d67-4cfa-946c-1a4c524b0cdd", (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:08.162675] "user": "C0414F69880D4C26ACA53E36AB359962_F4389I9Z4AISF1IE0LYS91X0A_RT", (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:08.162679] "hdi_user": "C0414F69880D4C26ACA53E36AB359962_F4389I9Z4AISF1IE0LYS91X0A_DT" (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:08.162681] }, (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:08.162684] "tags": [ (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:08.162686] "hana", (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:08.162688] "database", (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:08.162690] "relational" (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:08.162692] ] (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:08.162694] } (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:08.162697] ] (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:08.162699] } (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:12.373243] @sap/hdi-deploy, version 5.6.1 (mode default), server version unknown (0.0.0.0), cloud version , node version 24.13.0, HDI version -1, container API version -1 (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:12.373392] Deployment started at 2026-05-08 08:54:12 (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:12.373493] Using hdb@2.27.1 for connection (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:12.373513] Detection of server version failed; root cause: HANA Database instance is stopped (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:12.373520] Detection of cloud version failed; root cause: HANA Database instance is stopped (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:12.373524] Detection of container API version failed; root cause: HANA Database instance is stopped (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:12.373528] Detection of HDI version failed; root cause: HANA Database instance is stopped (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:12.373829] Deployment ended at 2026-05-08 08:54:12 (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:12.373888] Error: Option parameter is not supported by the server; based on detected server version unknown (STDERR, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:12.374251] (4s 283ms) (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:12.385231] npm notice (STDERR, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:12.385260] npm notice New minor version of npm available! 11.6.2 -> 11.14.0 (STDERR, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:12.385266] npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.14.0 (STDERR, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:12.385271] npm notice To update run: npm install -g npm@11.14.0 (STDERR, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:12.385276] npm notice (STDERR, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:12.439967] Exit status 1 (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:17.808704] Cell 77283d80-dfa7-40ba-ba4e-265aef112085 stopping instance 2c5ff50b-26e5-46c0-7f5b-0909 (STDOUT, CELL)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:17.808733] Cell 77283d80-dfa7-40ba-ba4e-265aef112085 destroying container for instance 2c5ff50b-26e5-46c0-7f5b-0909 (STDOUT, CELL)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:17.813447] Process has crashed with type: "web" (STDOUT, API)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:17.824106] App instance exited with guid 12d88eeb-f83c-4f84-aa2c-a59761ea2448 payload: {"instance"=>"2c5ff50b-26e5-46c0-7f5b-0909", "index"=>0, "cell_id"=>"77283d80-dfa7-40ba-ba4e-265aef112085", "reason"=>"CRASHED", "exit_description"=>"APP/PROC/WEB: Exited with status 1", "crash_count"=>1, "crash_timestamp"=>1778230457791911609, "version"=>"f71dfca5-5c08-4939-8e3c-0742ccc11077"} (STDOUT, API)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:18.043625] Cell d1cc041a-d5a1-41d6-b9f6-6cda736ce3f0 creating container for instance c07288d9-b090-4d1d-7a76-7be8 (STDOUT, CELL)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:18.412300] Exit status 137 (STDOUT, PROXY)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:19.031362] Security group rules were updated (STDOUT, CELL)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:19.127090] Cell d1cc041a-d5a1-41d6-b9f6-6cda736ce3f0 successfully created container for instance c07288d9-b090-4d1d-7a76-7be8 (STDOUT, CELL)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:19.792756] Cell 77283d80-dfa7-40ba-ba4e-265aef112085 successfully destroyed container for instance 2c5ff50b-26e5-46c0-7f5b-0909 (STDOUT, CELL)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:20.097254] Downloading droplet... (STDOUT, CELL)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:24.542110] Downloaded droplet (58.4M) (STDOUT, CELL)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:24.542319] Starting health monitoring of container (STDOUT, CELL)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:24.722085] Invoking pre-start scripts. (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:24.982307] Invoking start command. (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:25.528701] > start (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:25.528721] > node node_modules/@sap/hdi-deploy/deploy.js --use-hdb --parameter com.sap.hana.di.table/try_fast_table_migration=true (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:25.702921] VCAP_SERVICES: (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:25.703166] { (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:25.703191] "hana": [ (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:25.703195] { (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:25.703198] "name": "travel_expense_app-db", (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:25.703202] "label": "hana", (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:25.703206] "plan": "hdi-shared", (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:25.703208] "credentials": { (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:25.703211] "schema": "C0414F69880D4C26ACA53E36AB359962", (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:25.703214] "database_id": "101f8dce-9d67-4cfa-946c-1a4c524b0cdd", (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:25.703224] "user": "C0414F69880D4C26ACA53E36AB359962_F4389I9Z4AISF1IE0LYS91X0A_RT", (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:25.703228] "hdi_user": "C0414F69880D4C26ACA53E36AB359962_F4389I9Z4AISF1IE0LYS91X0A_DT" (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:25.703249] }, (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:25.703252] "tags": [ (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:25.703254] "hana", (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:25.703261] "database", (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:25.703263] "relational" (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:25.703266] ] (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:25.703268] } (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:25.703271] ] (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:25.703273] } (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:29.920093] @sap/hdi-deploy, version 5.6.1 (mode default), server version unknown (0.0.0.0), cloud version , node version 24.13.0, HDI version -1, container API version -1 (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:29.921382] Deployment started at 2026-05-08 08:54:29 (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:29.921638] Using hdb@2.27.1 for connection (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:29.921694] Detection of server version failed; root cause: HANA Database instance is stopped (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:29.921760] Detection of cloud version failed; root cause: HANA Database instance is stopped (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:29.921807] Detection of container API version failed; root cause: HANA Database instance is stopped (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:29.921865] Detection of HDI version failed; root cause: HANA Database instance is stopped (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:29.922113] Deployment ended at 2026-05-08 08:54:29 (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:29.922263] Error: Option parameter is not supported by the server; based on detected server version unknown (STDERR, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:29.922664] (4s 347ms) (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:29.939187] npm notice (STDERR, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:29.939221] npm notice New minor version of npm available! 11.6.2 -> 11.14.0 (STDERR, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:29.939226] npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.14.0 (STDERR, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:29.939247] npm notice To update run: npm install -g npm@11.14.0 (STDERR, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:29.939250] npm notice (STDERR, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:30.021534] Exit status 1 (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:35.832827] Cell d1cc041a-d5a1-41d6-b9f6-6cda736ce3f0 stopping instance c07288d9-b090-4d1d-7a76-7be8 (STDOUT, CELL)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:35.832862] Cell d1cc041a-d5a1-41d6-b9f6-6cda736ce3f0 destroying container for instance c07288d9-b090-4d1d-7a76-7be8 (STDOUT, CELL)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:35.838804] Process has crashed with type: "web" (STDOUT, API)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:35.849104] App instance exited with guid 12d88eeb-f83c-4f84-aa2c-a59761ea2448 payload: {"instance"=>"c07288d9-b090-4d1d-7a76-7be8", "index"=>0, "cell_id"=>"d1cc041a-d5a1-41d6-b9f6-6cda736ce3f0", "reason"=>"CRASHED", "exit_description"=>"APP/PROC/WEB: Exited with status 1", "crash_count"=>2, "crash_timestamp"=>1778230475815451593, "version"=>"f71dfca5-5c08-4939-8e3c-0742ccc11077"} (STDOUT, API)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:36.105548] Exit status 137 (STDOUT, PROXY)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:38.149811] Cell d1cc041a-d5a1-41d6-b9f6-6cda736ce3f0 successfully destroyed container for instance c07288d9-b090-4d1d-7a76-7be8 (STDOUT, CELL)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:39.352499] Cell c839c7b1-088e-41af-b9b7-66256aacd457 creating container for instance 6bab63c1-c8a1-4adb-77f3-b053 (STDOUT, CELL)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:40.274230] Security group rules were updated (STDOUT, CELL)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:40.375885] Cell c839c7b1-088e-41af-b9b7-66256aacd457 successfully created container for instance 6bab63c1-c8a1-4adb-77f3-b053 (STDOUT, CELL)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:41.195903] Downloading droplet... (STDOUT, CELL)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:47.260007] Downloaded droplet (58.4M) (STDOUT, CELL)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:47.260472] Starting health monitoring of container (STDOUT, CELL)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:47.400101] Invoking pre-start scripts. (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:47.652054] Invoking start command. (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:48.128056] > start (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:48.128083] > node node_modules/@sap/hdi-deploy/deploy.js --use-hdb --parameter com.sap.hana.di.table/try_fast_table_migration=true (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:48.284091] VCAP_SERVICES: (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:48.284111] { (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:48.284115] "hana": [ (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:48.284118] { (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:48.284123] "name": "travel_expense_app-db", (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:48.284127] "label": "hana", (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:48.284138] "plan": "hdi-shared", (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:48.284140] "credentials": { (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:48.284144] "schema": "C0414F69880D4C26ACA53E36AB359962", (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:48.284147] "database_id": "101f8dce-9d67-4cfa-946c-1a4c524b0cdd", (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:48.284152] "user": "C0414F69880D4C26ACA53E36AB359962_F4389I9Z4AISF1IE0LYS91X0A_RT", (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:48.284155] "hdi_user": "C0414F69880D4C26ACA53E36AB359962_F4389I9Z4AISF1IE0LYS91X0A_DT" (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:48.284158] }, (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:48.284164] "tags": [ (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:48.284166] "hana", (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:48.284169] "database", (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:48.284171] "relational" (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:48.284174] ] (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:48.284176] } (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:48.284181] ] (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:48.284184] } (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:52.511060] Error: Option parameter is not supported by the server; based on detected server version unknown (STDERR, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:52.511117] @sap/hdi-deploy, version 5.6.1 (mode default), server version unknown (0.0.0.0), cloud version , node version 24.13.0, HDI version -1, container API version -1 (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:52.511127] Deployment started at 2026-05-08 08:54:52 (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:52.511131] Using hdb@2.27.1 for connection (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:52.511134] Detection of server version failed; root cause: HANA Database instance is stopped (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:52.511137] Detection of cloud version failed; root cause: HANA Database instance is stopped (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:52.511143] Detection of container API version failed; root cause: HANA Database instance is stopped (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:52.511146] Detection of HDI version failed; root cause: HANA Database instance is stopped (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:52.511149] Deployment ended at 2026-05-08 08:54:52 (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:52.512061] (4s 347ms) (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:52.589291] npm notice (STDERR, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:52.589304] npm notice New minor version of npm available! 11.6.2 -> 11.14.0 (STDERR, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:52.589310] npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.14.0 (STDERR, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:52.589321] npm notice To update run: npm install -g npm@11.14.0 (STDERR, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:52.589325] npm notice (STDERR, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:52.664887] Exit status 1 (STDOUT, APP/PROC/WEB)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:59.488314] Cell c839c7b1-088e-41af-b9b7-66256aacd457 stopping instance 6bab63c1-c8a1-4adb-77f3-b053 (STDOUT, CELL)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:59.488351] Cell c839c7b1-088e-41af-b9b7-66256aacd457 destroying container for instance 6bab63c1-c8a1-4adb-77f3-b053 (STDOUT, CELL)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:59.506294] Process has crashed with type: "web" (STDOUT, API)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:59.517876] App instance exited with guid 12d88eeb-f83c-4f84-aa2c-a59761ea2448 payload: {"instance"=>"6bab63c1-c8a1-4adb-77f3-b053", "index"=>0, "cell_id"=>"c839c7b1-088e-41af-b9b7-66256aacd457", "reason"=>"CRASHED", "exit_description"=>"APP/PROC/WEB: Exited with status 1", "crash_count"=>3, "crash_timestamp"=>1778230499483495558, "version"=>"f71dfca5-5c08-4939-8e3c-0742ccc11077"} (STDOUT, API)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:54:59.700366] Exit status 137 (STDOUT, PROXY)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:02.016995] Cell c839c7b1-088e-41af-b9b7-66256aacd457 successfully destroyed container for instance 6bab63c1-c8a1-4adb-77f3-b053 (STDOUT, CELL)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:29.630876] Updated app with guid 12d88eeb-f83c-4f84-aa2c-a59761ea2448 ({"lifecycle"=>{"data"=>{"buildpacks"=>["nodejs_buildpack"]}, "type"=>"buildpack"}}) (STDOUT, API)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:29.742757] Updating process: "web" (STDOUT, API)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:31.302226] Stopping app with guid 12d88eeb-f83c-4f84-aa2c-a59761ea2448 (STDOUT, API)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:31.850460] Cell 684caff8-89cd-492b-be01-b3d0835f1763 creating container for instance 22a414f4-002b-4424-9778-054d579e7732 (STDOUT, CELL)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:32.858072] Security group rules were updated (STDOUT, CELL)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:32.957766] Cell 684caff8-89cd-492b-be01-b3d0835f1763 successfully created container for instance 22a414f4-002b-4424-9778-054d579e7732 (STDOUT, CELL)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:37.692270] Invoking pre-start scripts. (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:37.900190] Invoking start command. (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:38.379025] > start (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:38.379052] > node node_modules/@sap/hdi-deploy/deploy.js --use-hdb --parameter com.sap.hana.di.table/try_fast_table_migration=true (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:38.566222] VCAP_SERVICES: (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:38.566436] { (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:38.566458] "hana": [ (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:38.566461] { (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:38.566464] "name": "travel_expense_app-db", (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:38.566467] "label": "hana", (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:38.566472] "plan": "hdi-shared", (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:38.566480] "credentials": { (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:38.566483] "schema": "C0414F69880D4C26ACA53E36AB359962", (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:38.566486] "database_id": "101f8dce-9d67-4cfa-946c-1a4c524b0cdd", (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:38.566489] "user": "C0414F69880D4C26ACA53E36AB359962_F4389I9Z4AISF1IE0LYS91X0A_RT", (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:38.566493] "hdi_user": "C0414F69880D4C26ACA53E36AB359962_F4389I9Z4AISF1IE0LYS91X0A_DT" (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:38.566497] }, (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:38.566500] "tags": [ (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:38.566506] "hana", (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:38.566508] "database", (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:38.566510] "relational" (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:38.566512] ] (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:38.566515] } (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:38.566518] ] (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:39.228#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2473#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:38.566520] } (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:48.947#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2480#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:42.791195] @sap/hdi-deploy, version 5.6.1 (mode default), server version unknown (0.0.0.0), cloud version , node version 24.13.0, HDI version -1, container API version -1 (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:48.947#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2480#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:42.791578] Deployment started at 2026-05-08 08:55:42 (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:48.947#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2480#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:42.791892] Using hdb@2.27.1 for connection (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:48.947#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2480#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:42.791968] Detection of server version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:48.947#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2480#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:42.792060] Detection of cloud version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:48.947#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2480#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:42.792138] Detection of container API version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:48.947#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2480#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:42.792217] Detection of HDI version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:48.947#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2480#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:42.792833] Deployment ended at 2026-05-08 08:55:42 (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:48.947#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2480#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:42.793083] Error: Option parameter is not supported by the server; based on detected server version unknown (STDERR, APP/TASK/deploy)#
+#2026 05 08 08:55:48.947#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2480#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:42.793477] (4s 365ms) (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:48.947#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2480#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:42.809543] npm notice (STDERR, APP/TASK/deploy)#
+#2026 05 08 08:55:48.947#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2480#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:42.809577] npm notice New minor version of npm available! 11.6.2 -> 11.14.0 (STDERR, APP/TASK/deploy)#
+#2026 05 08 08:55:48.947#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2480#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:42.809585] npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.14.0 (STDERR, APP/TASK/deploy)#
+#2026 05 08 08:55:48.947#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2480#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:42.809587] npm notice To update run: npm install -g npm@11.14.0 (STDERR, APP/TASK/deploy)#
+#2026 05 08 08:55:48.947#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2480#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:42.809589] npm notice (STDERR, APP/TASK/deploy)#
+#2026 05 08 08:55:48.947#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2480#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:42.999938] Exit status 1 (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:48.947#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2480#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:43.691880] Cell 684caff8-89cd-492b-be01-b3d0835f1763 stopping instance 22a414f4-002b-4424-9778-054d579e7732 (STDOUT, CELL)#
+#2026 05 08 08:55:48.947#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2480#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:43.691909] Cell 684caff8-89cd-492b-be01-b3d0835f1763 destroying container for instance 22a414f4-002b-4424-9778-054d579e7732 (STDOUT, CELL)#
+#2026 05 08 08:55:48.947#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2480#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:46.550051] Cell 684caff8-89cd-492b-be01-b3d0835f1763 successfully destroyed container for instance 22a414f4-002b-4424-9778-054d579e7732 (STDOUT, CELL)#
+#2026 05 08 08:55:58.969#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2481#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:42.791195] @sap/hdi-deploy, version 5.6.1 (mode default), server version unknown (0.0.0.0), cloud version , node version 24.13.0, HDI version -1, container API version -1 (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:58.969#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2481#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:42.791578] Deployment started at 2026-05-08 08:55:42 (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:58.969#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2481#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:42.791892] Using hdb@2.27.1 for connection (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:58.969#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2481#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:42.791968] Detection of server version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:58.969#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2481#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:42.792060] Detection of cloud version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:58.969#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2481#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:42.792138] Detection of container API version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:58.969#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2481#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:42.792217] Detection of HDI version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:58.969#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2481#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:42.792833] Deployment ended at 2026-05-08 08:55:42 (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:58.969#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2481#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:42.793083] Error: Option parameter is not supported by the server; based on detected server version unknown (STDERR, APP/TASK/deploy)#
+#2026 05 08 08:55:58.969#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2481#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:42.793477] (4s 365ms) (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:58.969#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2481#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:42.809543] npm notice (STDERR, APP/TASK/deploy)#
+#2026 05 08 08:55:58.969#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2481#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:42.809577] npm notice New minor version of npm available! 11.6.2 -> 11.14.0 (STDERR, APP/TASK/deploy)#
+#2026 05 08 08:55:58.969#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2481#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:42.809585] npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.14.0 (STDERR, APP/TASK/deploy)#
+#2026 05 08 08:55:58.969#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2481#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:42.809587] npm notice To update run: npm install -g npm@11.14.0 (STDERR, APP/TASK/deploy)#
+#2026 05 08 08:55:58.969#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2481#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:42.809589] npm notice (STDERR, APP/TASK/deploy)#
+#2026 05 08 08:55:58.969#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2481#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:42.999938] Exit status 1 (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:58.969#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2481#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:43.691880] Cell 684caff8-89cd-492b-be01-b3d0835f1763 stopping instance 22a414f4-002b-4424-9778-054d579e7732 (STDOUT, CELL)#
+#2026 05 08 08:55:58.969#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2481#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:43.691909] Cell 684caff8-89cd-492b-be01-b3d0835f1763 destroying container for instance 22a414f4-002b-4424-9778-054d579e7732 (STDOUT, CELL)#
+#2026 05 08 08:55:58.969#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2481#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:46.550051] Cell 684caff8-89cd-492b-be01-b3d0835f1763 successfully destroyed container for instance 22a414f4-002b-4424-9778-054d579e7732 (STDOUT, CELL)#
+#2026 05 08 08:55:58.969#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2481#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:51.098477] Cell 684caff8-89cd-492b-be01-b3d0835f1763 creating container for instance a0f9b5bf-b72d-408b-b859-6d9c3471b9be (STDOUT, CELL)#
+#2026 05 08 08:55:58.969#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2481#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:51.866442] Security group rules were updated (STDOUT, CELL)#
+#2026 05 08 08:55:58.969#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2481#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:51.958585] Cell 684caff8-89cd-492b-be01-b3d0835f1763 successfully created container for instance a0f9b5bf-b72d-408b-b859-6d9c3471b9be (STDOUT, CELL)#
+#2026 05 08 08:55:58.969#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2481#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:57.797688] Invoking pre-start scripts. (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:55:58.969#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2481#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.065921] Invoking start command. (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.568643] > start (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.568674] > node node_modules/@sap/hdi-deploy/deploy.js --use-hdb --parameter com.sap.hana.di.table/try_fast_table_migration=true (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747391] VCAP_SERVICES: (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747593] { (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747607] "hana": [ (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747610] { (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747614] "name": "travel_expense_app-db", (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747650] "label": "hana", (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747654] "plan": "hdi-shared", (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747657] "credentials": { (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747660] "schema": "C0414F69880D4C26ACA53E36AB359962", (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747663] "database_id": "101f8dce-9d67-4cfa-946c-1a4c524b0cdd", (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747667] "user": "C0414F69880D4C26ACA53E36AB359962_F4389I9Z4AISF1IE0LYS91X0A_RT", (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747671] "hdi_user": "C0414F69880D4C26ACA53E36AB359962_F4389I9Z4AISF1IE0LYS91X0A_DT" (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747678] }, (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747685] "tags": [ (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747690] "hana", (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747693] "database", (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747696] "relational" (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747698] ] (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747702] } (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747704] ] (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747707] } (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:02.965352] @sap/hdi-deploy, version 5.6.1 (mode default), server version unknown (0.0.0.0), cloud version , node version 24.13.0, HDI version -1, container API version -1 (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:02.965459] Deployment started at 2026-05-08 08:56:02 (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:02.965691] Using hdb@2.27.1 for connection (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:02.965704] Detection of server version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:02.965709] Detection of cloud version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:02.965712] Detection of container API version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:02.965778] Detection of HDI version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:02.966110] Deployment ended at 2026-05-08 08:56:02 (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:02.966325] Error: Option parameter is not supported by the server; based on detected server version unknown (STDERR, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:02.966811] (4s 351ms) (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:02.984368] npm notice (STDERR, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:02.984393] npm notice New minor version of npm available! 11.6.2 -> 11.14.0 (STDERR, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:02.984397] npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.14.0 (STDERR, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:02.984400] npm notice To update run: npm install -g npm@11.14.0 (STDERR, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:02.984403] npm notice (STDERR, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:03.070176] Exit status 1 (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:03.715225] Cell 684caff8-89cd-492b-be01-b3d0835f1763 stopping instance a0f9b5bf-b72d-408b-b859-6d9c3471b9be (STDOUT, CELL)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:03.715264] Cell 684caff8-89cd-492b-be01-b3d0835f1763 destroying container for instance a0f9b5bf-b72d-408b-b859-6d9c3471b9be (STDOUT, CELL)#
+#2026 05 08 08:56:09.234#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2495#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:06.079021] Cell 684caff8-89cd-492b-be01-b3d0835f1763 successfully destroyed container for instance a0f9b5bf-b72d-408b-b859-6d9c3471b9be (STDOUT, CELL)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.568643] > start (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.568674] > node node_modules/@sap/hdi-deploy/deploy.js --use-hdb --parameter com.sap.hana.di.table/try_fast_table_migration=true (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747391] VCAP_SERVICES: (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747593] { (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747607] "hana": [ (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747610] { (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747614] "name": "travel_expense_app-db", (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747650] "label": "hana", (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747654] "plan": "hdi-shared", (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747657] "credentials": { (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747660] "schema": "C0414F69880D4C26ACA53E36AB359962", (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747663] "database_id": "101f8dce-9d67-4cfa-946c-1a4c524b0cdd", (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747667] "user": "C0414F69880D4C26ACA53E36AB359962_F4389I9Z4AISF1IE0LYS91X0A_RT", (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747671] "hdi_user": "C0414F69880D4C26ACA53E36AB359962_F4389I9Z4AISF1IE0LYS91X0A_DT" (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747678] }, (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747685] "tags": [ (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747690] "hana", (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747693] "database", (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747696] "relational" (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747698] ] (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747702] } (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747704] ] (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:55:58.747707] } (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:02.965352] @sap/hdi-deploy, version 5.6.1 (mode default), server version unknown (0.0.0.0), cloud version , node version 24.13.0, HDI version -1, container API version -1 (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:02.965459] Deployment started at 2026-05-08 08:56:02 (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:02.965691] Using hdb@2.27.1 for connection (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:02.965704] Detection of server version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:02.965709] Detection of cloud version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:02.965712] Detection of container API version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:02.965778] Detection of HDI version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:02.966110] Deployment ended at 2026-05-08 08:56:02 (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:02.966325] Error: Option parameter is not supported by the server; based on detected server version unknown (STDERR, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:02.966811] (4s 351ms) (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:02.984368] npm notice (STDERR, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:02.984393] npm notice New minor version of npm available! 11.6.2 -> 11.14.0 (STDERR, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:02.984397] npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.14.0 (STDERR, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:02.984400] npm notice To update run: npm install -g npm@11.14.0 (STDERR, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:02.984403] npm notice (STDERR, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:03.070176] Exit status 1 (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:03.715225] Cell 684caff8-89cd-492b-be01-b3d0835f1763 stopping instance a0f9b5bf-b72d-408b-b859-6d9c3471b9be (STDOUT, CELL)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:03.715264] Cell 684caff8-89cd-492b-be01-b3d0835f1763 destroying container for instance a0f9b5bf-b72d-408b-b859-6d9c3471b9be (STDOUT, CELL)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:06.079021] Cell 684caff8-89cd-492b-be01-b3d0835f1763 successfully destroyed container for instance a0f9b5bf-b72d-408b-b859-6d9c3471b9be (STDOUT, CELL)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:12.510291] Cell c839c7b1-088e-41af-b9b7-66256aacd457 creating container for instance 92c9a2cf-ca55-456b-9eeb-0649ebf50344 (STDOUT, CELL)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:13.336110] Security group rules were updated (STDOUT, CELL)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:13.445047] Cell c839c7b1-088e-41af-b9b7-66256aacd457 successfully created container for instance 92c9a2cf-ca55-456b-9eeb-0649ebf50344 (STDOUT, CELL)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:18.932578] Invoking pre-start scripts. (STDOUT, APP/TASK/deploy)#
+#2026 05 08 08:56:19.610#Z#DEBUG#a05cc58a-4abb-11f1-b3e9-eeee0a988dc4.travel_expense_app-db-deployer#flowable-async-job-executor-thread-2503#
+[PollExecuteTaskStatusExecution] 12d88eeb-f83c-4f84-aa2c-a59761ea2448 [2026-05-08T08:56:19.132791] Invoking start command. (STDOUT, APP/TASK/deploy)#

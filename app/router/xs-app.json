@@ -1,16 +1,25 @@
 {
-  "welcomeFile": "/index.html",
+  "welcomeFile": "/employees/index.html",
+  "authenticationMethod": "route",
   "routes": [
     {
       "source": "^/odata/(.*)$",
       "target": "/odata/$1",
       "destination": "srv-api",
-      "csrfProtection": true
+      "csrfProtection": true,
+      "authenticationType": "xsuaa"
     },
     {
-      "source": "^(.*)$",
-      "target": "$1",
-      "service": "html5-apps-repo-rt"
+      "source": "^/app/(.*)$",
+      "target": "/$1",
+      "service": "html5-apps-repo-rt",
+      "authenticationType": "xsuaa"
+    },
+    {
+      "source": "^/(.*)$",
+      "target": "/index.html",
+      "service": "html5-apps-repo-rt",
+      "authenticationType": "xsuaa"
     }
   ]
 }

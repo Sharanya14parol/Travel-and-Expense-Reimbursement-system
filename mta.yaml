@@ -2,16 +2,20 @@ _schema-version: 3.3.0
 ID: travel_expense_app
 version: 1.0.0
 description: "Welcome to your new CAP project."
+
 parameters:
   enable-parallel-deployments: true
   deploy_mode: html5-repo
+
 build-parameters:
   before-all:
     - builder: custom
       commands:
         - npm ci
         - npx cds build --production
+
 modules:
+
   - name: travel_expense_app-srv
     type: nodejs
     path: gen/srv
@@ -21,7 +25,7 @@ modules:
     build-parameters:
       builder: npm-ci
     provides:
-      - name: srv-api # required by consumers of CAP services (e.g. approuter)
+      - name: srv-api
         properties:
           srv-url: ${default-url}
     requires:
@@ -35,6 +39,8 @@ modules:
       buildpack: nodejs_buildpack
     requires:
       - name: travel_expense_app-db
+
+  # ✅ APPRouter (FIXED - XSUAA ADDED)
   - name: travel_expense_app
     type: approuter.nodejs
     path: app/router
@@ -46,10 +52,15 @@ modules:
       - name: srv-api
         group: destinations
         properties:
-          name: srv-api # must be used in xs-app.json as well
+          name: srv-api
           url: ~{srv-url}
           forwardAuthToken: true
+
       - name: travel_expense_app-html5-runtime
+
+      # 🔴 FIX: this was missing (CAUSE OF YOUR ERROR)
+      - name: xsuaa-service
+
     provides:
       - name: app-api
         properties:
@@ -86,6 +97,7 @@ modules:
           artifacts:
             - travel_requests.zip
           target-path: app/
+
     requires:
       - name: srv-api
       - name: travel_expense_app-html5-repo-host
@@ -94,6 +106,7 @@ modules:
           config:
             HTML5Runtime_enabled: true
 
+  # HTML5 apps (unchanged)
   - name: travel_expense_appemployees
     type: html5
     path: app/employees
@@ -103,8 +116,8 @@ modules:
       commands:
         - npm ci
         - npm run build
-      supported-platforms:
-        []
+      supported-platforms: []
+
   - name: travel_expense_appexpense_claims
     type: html5
     path: app/expense_claims
@@ -114,8 +127,8 @@ modules:
       commands:
         - npm ci
         - npm run build
-      supported-platforms:
-        []
+      supported-platforms: []
+
   - name: travel_expense_appexpense_policies
     type: html5
     path: app/expense_policies
@@ -125,8 +138,8 @@ modules:
       commands:
         - npm ci
         - npm run build
-      supported-platforms:
-        []
+      supported-platforms: []
+
   - name: travel_expense_appfinance_advance_approval
     type: html5
     path: app/finance_advance_approval
@@ -136,8 +149,8 @@ modules:
       commands:
         - npm ci
         - npm run build
-      supported-platforms:
-        []
+      supported-platforms: []
+
   - name: travel_expense_appfinance_expense_approval
     type: html5
     path: app/finance_expense_approval
@@ -147,8 +160,8 @@ modules:
       commands:
         - npm ci
         - npm run build
-      supported-platforms:
-        []
+      supported-platforms: []
+
   - name: travel_expense_apptravel_requests
     type: html5
     path: app/travel_requests
@@ -158,9 +171,9 @@ modules:
       commands:
         - npm ci
         - npm run build
-      supported-platforms:
-        []
+      supported-platforms: []
 
+  # destinations content module (unchanged)
   - name: travel_expense_app-destinations
     type: com.sap.application.content
     requires:
@@ -185,11 +198,13 @@ modules:
               sap.cloud.service: travel_expense_app.service
 
 resources:
+
   - name: travel_expense_app-db
     type: com.sap.xs.hdi-container
     parameters:
       service: hana
       service-plan: hdi-shared
+
   - name: travel_expense_app-destination
     type: org.cloudfoundry.managed-service
     parameters:
@@ -208,7 +223,6 @@ resources:
                 ProxyType: Internet
                 HTML5.ForwardAuthToken: true
                 HTML5.DynamicDestination: true
-
     requires:
       - name: srv-api
 
@@ -217,8 +231,16 @@ resources:
     parameters:
       service: html5-apps-repo
       service-plan: app-host
+
   - name: travel_expense_app-html5-runtime
     type: org.cloudfoundry.managed-service
     parameters:
       service: html5-apps-repo
       service-plan: app-runtime
+
+  - name: xsuaa-service
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: xsuaa
+      service-plan: application
+      path: ./xs-security.json
